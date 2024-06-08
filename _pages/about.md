@@ -14,7 +14,7 @@ My name is Declan Kutscher and I am a Master's student at the University of Pitt
 The works that inspired my aspirations include:
 
 - Yann Lecun's [JEPA](https://openreview.net/pdf?id=BZ5a1r-kVsf) paper
-- Jia's [PGRNN](https://epubs.siam.org/doi/pdf/10.1137/1.9781611975673.63)
+- Xiaowei Jia's [PGRNN](https://epubs.siam.org/doi/pdf/10.1137/1.9781611975673.63) paper
 - Mahmoud Assran's [I-JEPA](https://arxiv.org/abs/2301.08243) paper
 - Ritwik Gupta's [xBD](https://arxiv.org/abs/1911.09296) paper
 - [x-View3-SAR](https://arxiv.org/pdf/2206.00897) challenge
