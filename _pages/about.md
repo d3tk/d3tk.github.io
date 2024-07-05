@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-My name is Declan Kutscher and I am a Master's student at the University of Pittsburgh. I currently do machine learning research with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) where I am focused on solving real-world problems in climate and ecological systems. I am very interested in computer vision, remote sensing, and self-supervised learning. My master’s thesis topic is to be decided, but I am currently exploring using self-supervised learning (JEPA or other) for ecological system monitoring in satellite imagery(and other modalities).
+My name is Declan Kutscher and I am a Master's student at the University of Pittsburgh. I currently do machine learning research with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) where I am focused on solving real-world problems in climate and ecological systems. I am interested in computer vision, remote sensing, and self-supervised learning. My master’s thesis topic is analyzing the newest computer vision foundation models and backbones in their applications/adaptability to the domain of remote sensing. Computer vision research focuses on the most popular benchmarks; however, remote sensing has unique challenges of scale changes, noise, and frequent domain changes.
 
 The works that inspired my aspirations include:
 
