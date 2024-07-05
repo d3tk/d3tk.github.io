@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About me: Declan Kutscher"
+title: "About me"
 author_profile: true
 redirect_from:
   - /about/
