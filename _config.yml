@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale: "en-US"
-title: "About Me"
+title: "Declan K."
 title_separator: "-"
 name: &name "Declan Kutscher"
 description: &description "MSc. @ Pitt researching machine learning in real-world environmental systems"
