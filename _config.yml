@@ -21,7 +21,7 @@ repository: "d3tk/d3tk.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "profile.jpeg"
+  avatar: "profile.png"
   name: "Declan Kutscher"
   pronouns: "He/Him" # example: "she/her"
   bio: "MSc. @ Pitt researching machine learning in real-world environmental systems"
