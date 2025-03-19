@@ -1,0 +1,11 @@
+---
+title: "CS 0011 INTRODUCTION TO COMPUTING FOR SCIENTISTS (FALL '23)"
+collection: teaching
+type: "Undergraduate course"
+permalink: /teaching/2023-fall-cs0011
+venue: "University of Pittsburgh, School of Computing and Information"
+date: 2023-08-20
+location: "Pittsburgh, PA"
+---
+
+All of the CS 001X courses will introduce students to the concepts of computing and computer programming. Students in these courses will learn how a computer works and how to write programs in order to use the computer as a problem solving tool. A major focus of the class will be on developing problem-solving skills (e.g., how to decompose a problem into more manageable parts and how to combine those parts into an overall solution). CS 0011 in particular will focus on problems related to the natural sciences with an emphasis on computational biology. Domain-specific projects and labs will be assigned throughout the course to encourage students in the natural sciences to apply computing to their field of study.
