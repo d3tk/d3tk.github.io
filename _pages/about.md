@@ -11,6 +11,8 @@ redirect_from:
 
 My name is Declan Kutscher and I am a Master's student at the University of Pittsburgh. I currently do machine learning research with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) where I am focused on solving real-world problems in climate and ecological systems. I am interested in computer vision, remote sensing, and self-supervised learning. My master’s thesis topic is analyzing the newest computer vision models and backbones in their applications/adaptability to the domain of remote sensing. Computer vision research focuses on the most popular benchmarks; however, remote sensing has unique challenges of scale changes, noise, and frequent domain changes that should be addressed.
 
+My research goals are to incorporate physical and neurological knowledge to achieve human-level efficiency in learning especially with self-supervised learning in computer vision. Significant advances in ML and AI have been achieved via the integration of cognitive sciences into ML and AI and I believe this trend will continue. I am particular interested in applying models to the unique challenges of climate science and remote sensing.
+
 The works that inspired my aspirations include:
 
 - Yann Lecun's [JEPA](https://openreview.net/pdf?id=BZ5a1r-kVsf) paper
