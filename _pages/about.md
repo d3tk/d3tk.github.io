@@ -15,4 +15,4 @@ My research focuses on building machine learning systems that operate reliably i
 
 Outside of research I enjoy backpacking, film, music, and cats.
 
-Feel free to contact me at declank ‘at’ berkeley ‘dot’ edu. I am always open to new collaborations.
+Feel free to contact me at declank@berkeley.edu. I am always open to new collaborations.
