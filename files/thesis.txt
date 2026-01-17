@@ -1,0 +1,778 @@
+\documentclass[hidelinks,pdftex,ms,final]{pittetd} 
+\overfullrule=0pt
+%==========================================================================================%
+%OPTIONS THAT ARE WORKING IN THE "\DOCUMENTCLASS" DEFINITION
+%==========================================================================================%
+%2022 version 1.11
+
+
+% Include the desired options in the '[pdftex,]' definition (e.g., '[pdftex,ma,10pt]')
+%TITLE
+%1) phd = Doctor of Philosophy
+%2) ma = Master of Arts
+%3) ms = Master of Sciences
+%4) bphil = Bachelor's of Philosophy
+
+% FONT SIZE
+%1) Default 12pt = (No specification needed)
+%2) 11pt = 11 points
+%3) 10pt = 10 points
+
+%CHAPTER NUMBERING
+%1) default = No specification needed
+        %Chapters with numbers (1.0, 2.0, etc.) 
+        %sections with numbers and sub-numbers (1.1, 1.2, 2.1, 2.2, etc.) 
+        %subsections with numbers and sub-numbers (an additional sub-number) (1.1.1, 1.1.2, 2.1.1, 2.1.2, etc)
+        %subsubsections with numbers and sub-numbers (two additional sub-numbers) (1.1.1.1, 1.1.1.2, 2.1.1.1, 2.1.1.2, etc.)
+%2)'sectionletters'= Changes numbering format
+        %Chapters with Roman numerals (I, II, etc.) 
+        %sections with letters (A, B) 
+        %subsections with numbers (1, 2)
+        %subsubsections with lowercase letters (a, b)
+
+%SPECIAL OPTIONS
+%VERSION
+%1)'final' = Changes all "format warnings" into errors (Final version of the document       
+%==========================================================================================%
+%==========================================================================================%
+
+
+
+%==========================================================================================%
+%OPTIONAL PACKAGES FOR THE DOCUMENT
+%==========================================================================================%
+\usepackage{etoolbox}
+\usepackage{siunitx} % Add to preamble
+\makeatletter
+\patchcmd{\@caption}{\csname the#1\endcsname}{\csname fnum@#1\endcsname:}{}{}
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{4.5em}} % default for 3rd arg: 2.3em
+\let\l@table\l@figure % as in article.cls
+\makeatother
+
+% Change '\usepackage' with '\usewithpatch' if patches of the package are used
+% Package to include figures in the document
+\usepackage{graphicx}
+\usepackage{indentfirst}
+% Package and patches to include mathematical expressions
+\usepackage{amsmath,amsthm}
+\usepackage{pdflscape}
+\hypersetup{hidelinks}
+% Patches for the packages 'amsmath' and 'amsthm'
+\patch{amsmath}
+\patch{amsthm}
+
+
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{[#1]\hfill}
+\makeatother
+\makeatletter
+\def\@hangfrom#1{\setbox\@tempboxa\hbox{{#1}}%
+      \hangindent 0pt%\wd\@tempboxa
+      \noindent\box\@tempboxa}
+\makeatother
+
+
+% Change Figure and Table Numeration
+%\chapterfloats %Uncomment this to get figures and tables numbered within chapters.
+%==========================================================================================%
+%==========================================================================================%
+
+%==========================================================================================%
+%PATCHES TO USE DIFFERENT VERSIONS OF PITT DOCUMENTS
+%==========================================================================================%
+
+
+%If you started writing your thesis with the 'pittdiss' class
+%\patch{pittdiss} %Uncomment to use (i.e., delete the '%' from the command                  
+% This patch makes 'pittetd' interpret 'pittdiss' commands.
+
+%If you started writing your thesis with the 'pitthesis' class
+%\patch{pitthesis} %Uncomment to use (i.e., delete the '%' from the command                
+% This patch makes 'pittetd' interpret 'pittthesis' commands.
+%==========================================================================================%
+%==========================================================================================%
+
+
+
+%==========================================================================================%
+%CREATING THE TITLE PAGE
+%==========================================================================================%
+
+% TITLE OF THE DISSERTATION
+\title[Declan Kutscher Master's Thesis: On the Effectiveness of Pretrained Models for Remote Sensing]{On the Effectiveness of Pretrained Models for Remote Sensing}
+% The optional argument is the title that will appear in Acrobat Reader's Document Info dialog box (e.g., '\title[Title in Acrobat]{Title of the Document}
+
+% AUTHOR INFORMATION
+%Name
+\author{Declan Kutscher}
+%Previous Degree
+\degree{B.S. in Computer Science, University of Pittsburgh, 2024}
+
+% DEPARTMENT INFORMATION 
+\school{Department of Computer Science}
+% The name of the school will be preceded by 'the' unless otherwise specified, as in:
+%\school[certain]{department}
+
+% School is also needed in the 'Committee' page
+
+% DATES
+% Dissertation Date (Second Page, 'ii', of the title)
+%1) Default ('today' = date of latest compilation) = No specification needed
+%2) Custom date =\date{July 20th 2017}
+\date{October 17th 2025}
+% Document Year (First page, i, of the the title
+%1) Default ('current year' = year of latest compilation) = No specification needed
+%2) Custom year = \year{2017}                     
+
+% OPTIONS FOR THE ADOBE READER'S DOCUMENT INFO DIALOG BOX
+%Include keywords
+\keywords{hail-to-pitt, pittetd, theses, format}
+% This list appears in the field 'Keywords' of Acrobat Reader's Document Info
+
+% Include Subject
+\subject{Dissertation}
+%This fills in the 'Subject' field in Acrobat Reader's Document Info dialog box.
+%==========================================================================================%
+%==========================================================================================%
+
+
+
+%==========================================================================================%
+%CREATING THE DOCUMENT AND TITLE PAGE
+%==========================================================================================%
+% These instructions create a document and the title page with the information previously specified.
+\raggedbottom
+\begin{document}
+\maketitle
+% If moved around the document, it might generate errors and warnings while compiling.
+%==========================================================================================%
+%==========================================================================================%
+
+
+
+%==========================================================================================%
+%CREATING THE COMMITTEE PAGE
+%==========================================================================================%
+% For the committee membership page, you have to provide the names and affiliations of the members. The first one will 
+
+% THESIS ADVISOR (First member of the committee)
+\committeemember{Xiaowei Jia, University of Pittsburgh Department of Computer Science}
+
+% THESIS CO-ADVISOR
+%\coadvisor{Second advisor, Co-advisor Departmental Affiliation}
+%Uncomment to add a 'Second Advisor' into the document
+% COMMITTEE MEMBERS
+\committeemember{Longfei Shangguan, University of Pittsburgh Department of Computer Science}
+\committeemember{Nils Murrugarra-Llerena, University of Pittsburgh Department of Computer Science}
+
+% To add more committee members
+%\committeemember{Fourth member's name, Departmental Affiliation}
+%\committeemember{Fifth member's name, Departmental Affiliation}
+%\committeemember{Sixth member's name, Departmental Affiliation}
+% To use uncommon the different committee members or add '\committeemember' commands as needed
+
+%Special Option
+% For master's theses, the committee may be omitted, naming only the advisor.
+
+% DEPARTMENT INFORMATION 
+\school{Department of Computer Science}
+\makecommittee
+%==========================================================================================%
+%==========================================================================================%
+
+
+%==========================================================================================%
+%CREATING THE COPYRIGHT PAGE
+%==========================================================================================%
+
+% Create a copyright page with the author and year specified in the 'Title Page'
+\copyrightpage                     
+%Uncomment to get a copyright page.
+%==========================================================================================%
+%==========================================================================================%
+
+
+
+%==========================================================================================%
+%CREATING THE ABSTRACT
+%==========================================================================================%
+\begin{abstract}
+Remote sensing tasks are constrained by limited data and expensive labeling\cite{limitedlabelsrs, ball2018stateoftheartgapsdeeplearning}. Transfer learning offers a solution by leveraging models pretrained on large unlabeled datasets. While domain-specific pretraining on satellite imagery is an option, practitioners often use models pretrained on natural images such as ImageNet\cite{7301382, rs15194804}, which frequently outperform satellite-pretrained models despite the domain mismatch\cite{lahrichi2025selfsupervisedpretrainingsatelliteimagery}. This thesis investigates when and why natural image pretraining is advantageous for remote sensing.
+
+We evaluate eight models, including ResNet\cite{resnethe2015deepresiduallearningimage} and ViT\cite{vitdosovitskiy2021imageworth16x16words} architectures, across three experiments and one feature space analysis. In fine-tuning on BigEarthNet\cite{clasen2025rebenrefinedbigearthnetdataset}, natural-image pretrained models initially outperform both satellite-pretrained and randomly initialized models, though all converge to similar weighted F1 scores with sufficient training. In linear probing on EuroSAT\cite{helber2019eurosatnoveldatasetdeep}, natural-pretrained models achieve substantially higher macro F1-scores ($0.95$) than satellite-pretrained models (0.75), demonstrating superior feature quality. Sample efficiency experiments on BigEarthNet reveal that satellite-pretrained models perform better in low-data regimes, but their advantage diminishes as data availability increases. Feature space analysis using H-score\cite{HScorebao2022informationtheoreticapproachtransferabilitytask, HScoreAbouBaker2024}, Calinski–Harabasz Index\cite{VRCcalhinksi}, and intrinsic dimensionality\cite{ansuini2019intrinsicdimensiondatarepresentations} shows that natural pretraining produces more expressive and discriminative high-level representations, whereas satellite pretraining yields stronger shallow and mid-level features that benefit data-scarce training.
+
+These results provide a nuanced perspective on transfer learning in remote sensing, showing that natural image pretraining enhances representation quality for high-level tasks, while satellite pretraining offers advantages under data scarcity utilizing domain-specific biases.
+\end{abstract}
+
+% SPECIAL OPTIONS
+% Include Keywords
+% To include keywords as part of the abstract include the option '[keywords]' (e.g., \begin{abstract}[Keywords:]
+% The list comes from the '\keywords' specified in the 'Title Page'
+
+% Include the word 'ABSTRACT'
+% Use '\begin{abstract*}' and '\end{abstract*} instead of '\begin{abstract}' and '\end{abstract}
+% The word `ABSTRACT' appears on the top of the page
+%==========================================================================================%
+%==========================================================================================%
+
+
+
+%==========================================================================================%
+% TABLE OF CONTENTS, FIGURES, AND TABLES
+%==========================================================================================%
+
+% Table of contents
+\tableofcontents
+% Comment (Use the '%' character) to omit
+
+% List of Tables
+\listoftables                      
+% Comment (Use the '%' character) to omit
+
+% List of Figures
+
+\listoffigures
+             
+% Comment (Use the '%' character) to omit
+
+
+% **If no figures and/or tables are included in the document, 'PITETD' will still create an empty page for the figures and/or tables **
+
+% ** LaTex automatically includes all the figures and tables from the figures/tables included in the document **%
+%==========================================================================================%
+%==========================================================================================%
+\preface
+
+This research was supported in part by the University of Pittsburgh Center for Research Computing and Data, RRID:SCR\_022735, through the resources provided. Specifically, this work used the H2P cluster, which is supported by NSF award number OAC-2117681.
+%==========================================================================================%
+% STARTING THE DOCUMENT
+%==========================================================================================%
+
+\chapter{Introduction}
+
+Remote sensing uses satellite imagery to monitor the Earth. Governments and researchers rely on it for agriculture\cite{crophealthmonitoring, cropmodelricefield, cropMonitoring, cropyieldpred, ricefieldyield}, climate monitoring\cite{landcoverchangedetect}, disaster response, and national security. These applications demand accurate analysis of massive image collections. Deep Learning, and in particular computer vision, provides the most effective tools for this work\cite{YUAN2020111716, yao2022deeplearningremotesensing}.
+
+Deep learning models require large labeled datasets. In remote sensing, collecting and labeling data is expensive and slow\cite{surveryexpensivedatatuia}. To overcome this, researchers use pretrained models. These models learn general features from large datasets that transfer to new tasks. You can fine-tune them with limited data or apply them as fixed feature extractors through linear probing.
+
+Pretraining comes in supervised, unsupervised, and self-supervised forms. Supervised methods use paired labels such as done in CLIP\cite{clipradford2021learningtransferablevisualmodels}. Self-supervised methods like MoCO\cite{he2020momentumcontrastunsupervisedvisual} use proxy tasks. Unsupervised methods aim to discover structure without labels as done with various clustering techniques. Regardless of approach, pretraining reduces the need for massive labeled datasets in specialized domains.
+
+Many remote sensing studies still depend on models pretrained on ImageNet\cite{risojević2022needimagenetpretrainingremote}. These models are trained on natural, object-centric images rather than satellite data. Despite being out-of-domain, ImageNet pretraining often outperforms models trained directly on remote sensing datasets. At the same time, several large-scale, domain-specific pretraining efforts have emerged, such as SSL4EO and Satlas\cite{bastani2023satlaspretrainlargescaledatasetremote}. Yet the field lacks a clear understanding of when domain-specific pretraining truly offers an advantage over ImageNet or even training from scratch.
+
+This thesis addresses that gap. We investigate when in-domain pretraining matters for remote sensing, why it helps, and under what data conditions it outperforms out-of-domain pretraining. Our findings show that representation quality is the primary driver of downstream performance. In limited data regimes, the inductive biases from in-domain pretraining deliver stronger results than out-of-domain models. By clarifying these conditions, this work guides the effective use of pretraining in remote sensing and provides insight for transfer learning more broadly.
+
+This work is guided by the hypothesis that the effectiveness of pretraining for remote sensing depends on both domain alignment and data availability. Models pretrained on natural images produce high-level representations that perform best when data are abundant and feature transfer is possible. Satellite-pretrained models encode domain-specific inductive biases that improve sample efficiency when labeled data are limited. These differences are expected to arise from distinct internal feature geometries, with natural pretraining creating highly separable and high-dimensional representations, and satellite pretraining producing more compact and clustered manifolds.
+
+This hypothesis addresses three key questions:
+
+\begin{enumerate}
+    \item How does the pretraining domain, natural versus satellite, affect downstream performance on remote sensing tasks?
+    \item How does data scale influence this relationship?
+    \item What geometric properties of learned representations explain these effects?
+\end{enumerate}
+
+We test two model architectures: ResNet and Vision Transformer. For ResNet, we evaluate MoCO and DINO. For Vision Transformer, we evaluate MoCO, DINO, and JEPA. The models are pretrained on two datasets: ImageNet and SSL4EO. This produces the following variants: ResNet trained on SSL4EO with MoCO, ResNet pretrained on ImageNet with DINO, ResNet pretrained on ImageNet with MoCO, ViT pretrained on SSL4EO with MoCO, ViT pretrained on SSL4EO with DINO, ViT pretrained on ImageNet with MoCO, ViT pretrained on ImageNet with DINO, and ViT pretrained on ImageNet with JEPA. We also include randomly initialized ResNet and ViT baselines. These models are fine-tuned on BigEarthNet, probed linearly on EuroSAT, and tested for sample efficiency with subsets of BigEarthNet. We analyze their feature spaces using three metrics: H-score for class separability, Calinski–Harabasz Index for clustering quality, and Intrinsic Dimension for representation complexity.
+
+\section*{Contributions}
+
+This thesis makes the following contributions:
+\begin{itemize}
+    \item A systematic evaluation of in-domain versus out-of-domain pretraining for remote sensing, across architectures, methods, and datasets.
+    \item An empirical analysis of when in-domain pretraining provides benefits, with emphasis on low-data regimes.
+    \item A feature-space study linking representation quality to downstream performance through separability, clustering, and intrinsic dimension metrics.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Models evaluated in this study, categorized by backbone architecture, pretraining dataset and pretraining method.}
+\label{tab:models}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Name}& \textbf{Backbone} & \textbf{Pretraining Dataset} & \textbf{Pretraining Method} \\ \hline
+ResNet-Sat-MoCO & ResNet & SSL4EO & MoCO \\ \hline
+ResNet-Nat-DINO & ResNet & ImageNet & DINO  \\ \hline
+ResNet-Nat-MoCO & ResNet & ImageNet & MoCO  \\ \hline
+ViT-Sat-MoCO & ViT & SSL4EO & MoCO  \\ \hline
+ViT-Sat-DINO & ViT & SSL4EO & DINO  \\ \hline
+ViT-Nat-MoCO & ViT & ImageNet & MoCO  \\ \hline
+ViT-Nat-DINO & ViT & ImageNet & DINO  \\ \hline
+ViT-Nat-JEPA & ViT & ImageNet & JEPA  \\ \hline
+ResNet-scratch & ResNet & -- & --  \\ \hline
+ViT-scratch & ViT & -- & --  \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Related Work}
+
+Research in remote sensing and machine learning spans multiple domains and methodological advances. This section reviews prior work in six areas: applications of satellite imagery, transfer learning, pretraining strategies, domain adaptation and, representation evaluation.
+
+\subsection{Remote Sensing and Machine Learning.}
+
+Satellite imagery plays a central role in agriculture, ecology, disaster response, and national security. In agriculture, imagery provides wide-area coverage for monitoring crop health, irrigation, and yield forecasting\cite{rs13030531, kalogeras2025monitoringdigestateapplicationagricultural}. Multiple spectral bands enable precise assessments that support sustainable farming. In ecology, remote sensing supports modeling plant species distributions, detecting land cover change, monitoring glacier retreat, tracking forest fragmentation, and studying urban expansion\cite{zhao2024linking, li2025multi}. It also helps identify unmarked vessels to reduce illegal fishing\cite{paolo2022xview3sardetectingdarkfishing, illegalfishingmonitor}. These analyses inform policy and guide environmental protection. For disaster response, imagery enables building damage assessment\cite{gupta2019xbddatasetassessingbuilding, gupta2020rescuenetjointbuildingsegmentation, wang2025disasterm3remotesensingvisionlanguage, isprs-archives-XLVI-3-W1-2022-133-2022}, wildfire recovery, and flood risk mapping, all of which support life-saving decisions.
+
+Remote sensing faces a small-data challenge. Unlabeled imagery is abundant, but annotated datasets are scarce, especially for rare events and fine-grained classes. Labels require expert knowledge, pixel-level annotations, and significant time and labor. Data complexity adds further challenges. Satellite sensors capture multi-dimensional spectral data that differ from standard RGB images. Generalization across regions, sensors, or seasons often fails, which complicates transferability.
+
+Traditional methods such as gradient boosted trees, clustering, and filtering provided early solutions for remote sensing tasks\cite{gislason2006randomforest, freeman2014random, environments7100084, objrandomforest, treebasedregression, Santos02072016}. Deep learning shifted the focus to learning feature representations directly from data. These models achieve strong results but require large datasets and carefully designed inductive biases.
+
+\subsection{Pretraining and Transfer Learning.}
+
+Pretraining addresses these limitations. A model trained on large datasets can transfer learned features to new tasks\cite{TLreview, farahani2021concisereviewtransferlearning, shadman2023utilityfeaturereusetransfer}. Practitioners use pretrained models either by extracting features and training a simple classifier (linear probing) or by fine-tuning the model to adjust the features for the target domain. Fine-tuning modifies the representations with task-specific gradients, while linear probing evaluates the representations directly.
+
+\subsection{Pretraining Strategies in Computer Vision.}
+
+Self-supervised learning (SSL) removes the need for labels by designing pretext tasks that force models to learn generalizable features. Contrastive methods such as MoCO and BYOL\cite{grill2020bootstraplatentnewapproach} maximize similarity between augmented views of the same image while separating different images. Generative methods such as autoencoders and masked autoencoders\cite{autoencoder, he2021maskedautoencodersscalablevision} reconstruct missing inputs to learn useful latent spaces. Predictive methods train models to infer transformations, such as image rotation or shuffled patch order\cite{chhabra2022patchrotselfsupervisedtechniquetraining, gidaris2018unsupervisedrepresentationlearningpredicting, noroozi2017unsupervisedlearningvisualrepresentations}. The goal is to create difficult but label-free tasks that yield high-quality features transferable to downstream applications.
+
+\subsection{In-domain vs. Out-of-domain Pretraining.}
+
+In remote sensing, ImageNet pretraining has been the default baseline. These models transfer well to optical imagery and often outperform models trained directly on satellite data. Domain-specific efforts such as SatlasPretrain\cite{bastani2023satlaspretrainlargescaledatasetremote} and SSL4EO\cite{wang2023ssl4eos12largescalemultimodalmultitemporal} aim to capture inductive biases unique to multi-spectral and radar imagery. Furthermore, there have been pretext tasks introduced tailored to satellite data, including temporal change detection and spectral feature modeling\cite{sarjepa, reed2023scalemaescaleawaremaskedautoencoder, mañas2021seasonalcontrastunsupervisedpretraining}. Despite these advances, ImageNet pretrained models often remain competitive or even superior\cite{risojević2022needimagenetpretrainingremote, rs14215500, corley2023revisiting}.
+
+\subsection{Evaluation of Representations.}
+
+The most common way to evaluate learned representations is through task performance. Researchers fine-tune a pretrained model on labeled data or freeze the features and apply a linear classifier. Accuracy is a common benchmark metric; however, we utilize weighted F1 score to account for imbalanced class distributions and to better capture model performance across all classes by balancing precision and recall according to class frequency. Fine-tuning measures how well the representation adapts, while linear probing tests the quality of the features without modification.
+
+Beyond F1 score, several metrics assess representation quality directly. Separability metrics such as the H-score\cite{HScoreAbouBaker2024, HScorebao2022informationtheoreticapproachtransferabilitytask} measure how well features distinguish between classes. Clustering metrics such as the Calinski–Harabasz\cite{VRCcalhinksi} index quantify how tightly samples group together in the learned space relative to their separation. Measures of intrinsic dimension\cite{ansuini2019intrinsicdimensiondatarepresentations} estimate the effective complexity of the representation, revealing whether features collapse into overly simple structures or capture richer variability. These analyses provide insight into what the model learns beyond downstream performance.
+
+Pretraining has become essential in remote sensing pipelines. It reduces the impact of limited labeled data and improves downstream performance. Yet evidence shows that out-of-domain pretraining sometimes outperforms domain-specific alternatives. This unresolved question motivates this thesis: to identify when and why in-domain pretraining provides an advantage, and how to design better training strategies for remote sensing tasks.
+
+\chapter{Methods}
+
+To investigate when and why natural pretrained models outperform satellite pretrained models, we designed three experiments and corresponding analyses. Natural pretrained models are pretrained using self-supervised learning on datasets containing human-centric images. These are images consisting of common views of everyday objects and scenes. Conversely, satellite pretrained models are pretrained on datasets containing only satellite imagery using similar self-supervised learning pretext tasks.
+
+We test eight pretrained models: five naturally pretrained and three satellite pretrained, plus two randomly initialized baselines. The natural models were pretrained on large-scale natural image datasets, while the satellite models were pretrained on large-scale satellite image datasets.
+
+We evaluated performance through fine-tuning on a satellite image classification dataset with abundant labeled samples. This tests model adaptation in a context less common to their pretraining domain. The second experiment trained each model on progressively smaller subsets of the same dataset to measure sample efficiency, revealing how much labeled data each model requires for strong performance. The third experiment used features extracted from the pretrained models for linear probing on a smaller classification dataset to assess representation quality without fine-tuning.
+
+Finally, we performed a representation analysis using H-score to measure class separability, intrinsic dimension to quantify feature complexity, and the Calinski–Harabasz Index to evaluate cluster quality which indicates how well the extracted features are defined.
+
+\section{Datasets}
+
+For our experiments, the pretraining datasets were chosen due to the popularity of the models trained from them. For instance, ImageNet\cite{russakovsky2015imagenetlargescalevisual} is the most widely used pretraining dataset due to its availability and the extensive research focus on self-supervised learning. ImageNet has $1.2$ million training samples spanning $1,000$ classes of natural objects. The images are RGB and the dataset provides $842$ billion pixels to sample from. The number of pixels is an important measure as it reflects the information available for representation learning.
+
+For satellite imagery pretraining, we selected datasets with established popularity and widely available pretrained models. The SSL4EO\cite{wang2023ssl4eos12largescalemultimodalmultitemporal} dataset contains $1$ million Sentinel-2 image samples over four seasons at $10m$ resolution. Restricting to RGB channels, it offers $209$ billion pixels to sample, which is roughly one-quarter the size of ImageNet.
+
+For downstream evaluation, we use BigEarthNet\cite{clasen2025rebenrefinedbigearthnetdataset} and EuroSat\cite{helber2019eurosatnoveldatasetdeep}. BigEarthNet contains 43 classes representing diverse land uses and $296$K training samples, with each patch covering a $1.2$ km x $1.2$ km area derived from Sentinel-2 imagery at $10-60$ m spatial resolution depending on the spectral band. EuroSat is comparatively simpler, with only $10$ classes and $21$K training samples. It also comprises Sentinel-2 imagery but with a consistent 10m resolution. Its reduced complexity makes it well-suited for probing representation quality under constrained settings. Together, these benchmarks capture both the challenges of large-scale, multi-class classification (BigEarthNet) and the efficiency of transfer to smaller, easier tasks (EuroSat), providing a balanced evaluation of learned representations.
+
+\section{Models and Pretraining Methods}
+
+To construct a comprehensive evaluation, we selected two of the most widely used deep learning architectures: ResNet-50\cite{resnethe2015deepresiduallearningimage} and ViT-s\cite{vitdosovitskiy2021imageworth16x16words}. These models are of comparable scale ($\approx22$ Million active parameters), enabling a fair comparison between convolution and transformer-based representations. We utilized pretrained weights from publicly available self-supervised learning research projects. ResNet-50 and ViT-s were selected due to their comparable parameter counts, widespread adoption in both remote sensing and general vision research, and the availability of pretrained weights across multiple self-supervised frameworks, ensuring reproducibility and fairness.
+
+The pretraining methods chosen, MoCO\cite{he2020momentumcontrastunsupervisedvisual, mocov3chen2021empiricalstudytrainingselfsupervised}, DINO\cite{DINOcaron2021emergingpropertiesselfsupervisedvision, oquab2024dinov2learningrobustvisual}, and JEPA\cite{JEPALeCun2022, ijepaassran2023selfsupervisedlearningimagesjointembedding}, are representative of distinct stages in the development of self-supervised vision research. MoCO introduced momentum contrast as a scalable and efficient way to train deep encoders, becoming a foundation for contrastive learning. DINO demonstrated the potential of knowledge distillation and self-distillation for non-contrastive approaches, showing the strength of vision transformers trained without labels. JEPA represents the latest generation of joint-embedding predictive architectures, focusing on predictive modeling and generalization at scale. Together, these paradigms capture the evolution of self-supervised learning from contrastive methods to distillation-based and predictive approaches, making them well-suited for benchmarking representation transfer.
+
+\subsection{Momentum Contrast.}
+
+Momentum Contrast (MoCO) is a self-supervised learning framework designed for visual representation learning. It is a contrastive learning paradigm meaning the objective is to be able to distinguish from synthetic negative samples and synthetic positive samples. Positive samples are made by applying augmentations to a sample while negative samples come from a queue of prior samples. The method utilizes a queue encoder updated via backpropagation and a momentum encoder updated by an exponential moving average (EMA). The momentum updates ensure consistent representations across training. The positive samples are made by applying a different augmentation to the same sample generating two positive samples. One is put through the queue encoder and the other is through the momentum encoder. The latents of the positive samples are then compared to negative samples which are a queue of past latents. MoCO uses Information Noise Contrastive Estimation loss to encourage the latent from the queue encoder to be similar to the positive key from the momentum encoder and be dissimilar to all the negative keys.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{Images/moco.jpg}
+    \caption{Schematic illustration of the MoCO framework for self-supervised learning, adapted from \cite{he2020momentumcontrastunsupervisedvisual}. The method builds a dynamic dictionary with a queue and a moving-averaged encoder to learn visual representations.}
+    
+    \label{Reference: moco-overview}
+\end{figure}
+\subsection{Distillation with No Labels.}
+
+Distillation with No Labels (DINO) trains a student network to match the output of a teacher network without labels. The teacher is an EMA of the student to stabilize learning, like MoCO. Both networks process different augmentations of the same image and the student aligns its output distribution with the teacher. Unlike contrastive methods, like MoCO, DINO does not require negative samples. The student aims to mimic a soft probability distribution produced by the teacher network, this is to avoid representation collapse by adjusting the centering and sharpening of the teacher’s outputs. The DINO uses cross entropy between these probability distributions which minimizes KL-divergence between the student and teacher. This aligns representation distributions without collapse. DINO is shown to create semantically rich embeddings where related images cluster together. Also, DINO at scale exhibits emergent segmentation and attention behavior.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{Images/dino.jpg}
+    \caption{Diagram of the DINO approach, adapted from Caron et al. \cite{DINOcaron2021emergingpropertiesselfsupervisedvision}. A student network is trained to match the output of a teacher network, which is an exponential moving average of the student.}
+    
+    \label{Reference: dino-overview}
+\end{figure}
+\subsection{Joint-Embedding Predictive Architecture.}
+
+The Joint-Embedding Predictive Architecture (JEPA)\cite{JEPALeCun2022, ijepaassran2023selfsupervisedlearningimagesjointembedding} is the newest method utilized in our study. Specfically, we evaluate I-JEPA as it was designed specifically for images. This method learns by predicting the representation of masked image regions instead of reconstructing pixels. A context encoder processes visible patches while a target encoder provides representations of the masked ones. The model learns to align the context predictions with target embeddings, emphasizing semantic prediction over low-level reconstructions. The mechanism is that the input image is partitioned into visible and masked regions. The context encoder processes the visible parts and predicts representations for the missing ones. The target encoder, which does not share weight with the context encoder (usually through an EMA), provides ground truth embeddings of the masked regions. The learning objectives align the predicted embeddings with the target embeddings. Unlike autoencoders or masked autoencoders, I-JEPA does not model the pixel level details and works in latent space. The loss is a mean squared error in representation space between the predicted and target embeddings.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{Images/jepa.jpg}
+    \caption{Overview of the JEPA framework, adapted from LeCun et al. \cite{JEPALeCun2022}. The system learns joint embeddings by predicting representations of masked or transformed views of the input.}
+    
+    \label{Reference: jepa-overview}
+\end{figure}
+
+\subsection{Open Source Weights Used.}
+
+For ResNet, we use weights from MoCOv3 and DINOv2 trained on ImageNet. For the satellite model, we used weights trained on SSL4EO RGB with MoCO. For ViT, we utilized model weights from MoCOv3 and JEPA trained on ImageNet and then DINOv1 trained on ImageNet. For the satellite weights, we utilized weights trained on SSL4EO S2 dataset which is the full Sentinel-2 images of SSL4EO, in order to adapt these weights for RGB images we project the weights of the patch embedding corresponding to the RGB channels in Sentinel-2 into a $3$-channel patch embedding layer. The weights were trained using MoCO and DINO.
+
+Additional details of the model weights and pre-training recipes are in Appendix \ref{app:model-summary}.
+
+\section{Experimental Setup}
+
+We evaluate these models across three separate experiments. The first experiment is fine tuning the models on BigEarthNet with $43$ classes. All of the models are fine-tuned with the same optimizer and learning rate scheduler. The optimizer is AdamW with beta 0.9 and $0.999$, weight decay = $0.05$ and a base learning rate of $3.0e-4$. The scheduler is a linear warmup from learning rate = $0$ to learning rate = $3.0e-4$ then cosine decay down to $0$ again. This is a standard learning rate schedule. All of the models were frozen except for the classification head. For ViT-s, their batch norm and layer norm layers were unfrozen to adapt to the inputs normalization statistics. For our baseline, we train a ResNet and ViT-s from scratch i.e. random initialization. These models use the same learning rate and optimizer configuration but are not frozen. The models are all trained for $50$ epochs on two L40s GPUs. Training takes around $13$ hours. The models are optimized via Binary Cross Entropy loss. We collect the validation accuracy as well as the weighted F1-Score. This experiment is to evaluate the downstream performance given sufficient task labeled data.
+
+Our next experiment is linear probing on the EuroSat image classification task dataset. Each model was frozen and the classification head was removed. Then every sample in EuroSat was passed through the model to get the output features. These features were saved and then a linear regression was trained on the trainset features. The resulting linear model was tested on the test set of features. All models used the same iterations and solver, saga, for solving the linear regression. The models were trained on a 64 core CPU using 1 process; however, the preprocessing of the feature collection was done using a single L40s GPU which takes 10 seconds. For the baseline, we passed the EuroSat dataset through a randomly initialized ResNet and ViT-s. We collect for each model the overall precision, recall and F1-score. We also collect the per-class precision, recall and F1-score. This experiment is meant to isolate representations quality as high quality representations, without re-training available would allow for very accurate linear classification models across classes.
+
+Our final experiment is fine-tuning all of the models on different subsets of the BigEarthNet training set. The training set-up was identical to the first experiment except the models were trained on 10, 20, 50 and 75\% of the dataset and evaluated on the full validation set. The subsets were randomly sampled and the same samples were used for every model of that subset size. We collected the same metrics of Accuracy and F1-score for each model. Each model was trained on two L40s GPUs. The training time varied based on subset spanning from $3$ hours for the 10\% subsets to at most 5 hours for the 70\% subsets. The purpose of this experiment is to investigate which model representations allow it to succeed in low data domains. When there is not a lot of labeled task data, can the models perform well?
+
+Lastly, we conducted an analysis on the features extracted from the models prior to training on BigEarthNet. We investigated the class separability using H-index, complexity with Intrinsic Dimensions and the clustering quality with Calinski–Harabasz Index. These three metrics were selected in order to investigate the overall representation quality of the models without training. H-index in this context quantifies how well the features separate classes. A higher H-index means that a large number of classes have feature distributions that are distinct and well separated from others. If many classes can be reliably distinguished based on extracted features then they’re better for downstream tasks.Intrinsic dimension measures the effective dimensionality of the feature space. Low intrinsic dimensions means the features lie on a compact manifold suggesting a more compressed/efficient representation. Higher dimensions could lead to more noisy or redundant feature spaces. A low intrinsic dimension is preferred for transfer learning as they don’t encode noise and capture the essential structure. The Calinski–Harabasz Index is a metric for the cluster quality of the features based on the class. It is the ratio of inter and intra cluster distance. A higher value means the clusters are not only well separated but also the features within the class clusters themselves are very close. This creates very high quality clusters. 
+
+\chapter{Results}
+
+In this section we will review the results of our full fine tuning on BigEarthNet experiment, the linear probe on EuroSat and the sample efficiency on BigEarthNet experiment. The results of our experiments show that there are particular dynamics that influence when in domain pretraining out performs out of domain pretraining.  The results then motivate our feature space analysis.
+
+\section{BigEarthNet Fine-Tuning}
+
+From our experiment, ResNet-50 trained from random initialization (ResNet-scratch) performs the best, achieving $70.2\%$ accuracy and an F1-score of $0.779$. Within the ViT-s architecture itself, the ViT-s pretrained on SSL4EO-S12 with MoCOv1 (ViT-Sat-MoCO) performed the best with $69.4\%$ accuracy and an F1-score $0.770$. The ViT-s trained from random initialization (ViT-scratch) has comparable performance to the other ViT-s models except the ViT-s trained on ImageNet with DINOv2 (ViT-Nat-DINO) and the best performing, ViT-Sat-MoCO. The pretrained ResNets are slightly below the ResNet scratch with F1 score at $0.759$ to $0.774$ compared to $0.779$.  
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/project_learning_curves.png}
+    \caption{Learning curves of models over training epochs, plotted as validation F1 Score vs. epoch number.}
+    
+    \label{Reference: learning-curves-for-round1}
+\end{figure}
+
+With enough labeled data, in-domain and out-of-domain pretraining are comparable to random initialization and each other. The ResNet-sat-MoCO model achieves accuracy $69.6\%$ and F1-score $0.774$ compared to its naturally trained counterpart, ResNet-Nat-moCO, getting $69.5\%$ and $0.772$ respectively.  With ViT-s models, ViT-Sat-MoCO for instance is only slightly better than ViT-Nat-DINO at $69.3\%$ vs $68.2\%$ and $0.770$ vs $0.764$. This shows no clear advantage of in domain pretraining when data is abundant. These results motivate our next experiments to find the limit where pretraining succeeds and regular training fails. Also of note, ResNet’s outperformed ViT-s across the board. This indicates an architectural inductive bias that ResNets are able to exploit in the Remote Sensing domain that ViT-s cannot.
+
+\begin{table}[h]
+\centering
+\caption{Validation accuracy and F1-score for each evaluated model on fine tuning on the full BigEarthNet dataset. Asterisks (*) denote the best model for that architecture.}
+\label{tab:model-performance}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Model Name} & \textbf{Validation Accuracy} & \textbf{Validation F1-Score} \\ \hline
+ResNet-Nat-MoCO & 69.5\% & 0.772 \\ \hline
+ResNet-Nat-DINO & 68.9\% & 0.769 \\ \hline
+ResNet-Sat-MoCO & 69.6\% & 0.774 \\ \hline
+ResNet-scratch & \textbf{70.2\%*} & \textbf{0.779*} \\ \hline
+ViT-Nat-DINO & 68.3\% & 0.764 \\ \hline
+ViT-Nat-MoCO & 66.4\% & 0.746 \\ \hline
+ViT-Nat-JEPA & 67.9\% & 0.761 \\ \hline
+ViT-Sat-DINO & 66.8\% & 0.750 \\ \hline
+ViT-Sat-MoCO & 69.4\%* & 0.770* \\ \hline
+ViT-scratch & 66.3\% & 0.746 \\ \hline
+\end{tabular}
+\end{table}
+
+\section{EuroSat Linear Probing}
+
+When it comes to Linear Probing with frozen backbones, natural image pretraining yields far superior representations on EuroSat. The average macro F1-score of the natural models is $0.96$, compared to $0.772$ for the satellite-pretrained models. Satellite pretraining, however, still outperforms random initialization ($0.678$), indicating that it captures useful structural information.
+
+Performance varies substantially across classes for the satellite versus natural models. For example, on \textit{Highway} and \textit{River}, the gap is $0.346$ and $0.340$, respectively. This implies that the features of the naturally pretrained models are more linearly separable for these classes (and others), despite the in-domain advantage of satellite models. In contrast, this trend narrows for classes such as \textit{Industrial}, where the gap is smaller ($0.053$). Naturally pretrained DINO models (ResNet-nat-DINO and ViT-nat-DINO) approach ceiling performance, showing strong generalization across all classes.
+
+Beyond overall metrics, class-level analysis reveals substantial heterogeneity in difficulty. Classes such as \textit{Pasture}, \textit{Highway}, and \textit{River} are consistently difficult, sharing visual features dominated by elongated structures and gradual spectral gradients. Easier classes, such as \textit{Sea Lake} and \textit{Annual Crop}, exhibit stronger texture and color separation, which aids discrimination.
+
+Examining model confusions provides additional insight into representational weaknesses. The most frequent misclassifications occur between visually similar or spectrally overlapping classes. High confusion rates are observed between \textit{Highway} and \textit{River}, and between \textit{Permanent Crop} and \textit{Herbaceous Vegetation}. In particular, \textit{Highway} is often misclassified as \textit{River}, and vice versa as shown in Figure \ref{fig:river-as-highway}. While \textit{Permanent Crop} tends to be confused with \textit{Herbaceous Vegetation} shown in Figure \ref{fig:herb-as-crop}. These errors arise from shared linear textures, overlapping color distributions, and weak boundary cues that make separation challenging under linear evaluation. 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/river-as-highway.png}
+    \caption{An example of a \textit{River} sample that is confused by models the most compared to a random sample of the \textit{Highway} class}
+    
+    \label{fig:river-as-highway}
+\end{figure}
+
+Approximately $80\%$ of \textit{Highway–River} misclassifications originate from lower-performing satellite-pretrained models, indicating that these representations remain sensitive to spectral and geometric ambiguities. In-domain self-supervised pretraining improves overall structure awareness but does not fully resolve fine-grained class separation. Out-of-domain pretraining provides greater robustness, likely due to richer feature spaces capable of distinguishing subtle differences—an effect explored further in the subsequent feature-space analysis.
+
+\begin{table}[h]
+\centering
+\caption{Per-class validation score for each model across 10 land cover classes. Asterisks (*) denote models with best performance on that class for that model architecture.}
+\label{tab:per-class-acc}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l *{10}{S[table-format=2.2]}}
+\hline
+\textbf{Model Name} & 
+{\textbf{Annual crop}} & 
+{\textbf{Forest}} & 
+{\textbf{Herbaceous Veg.}} & 
+{\textbf{Highway}} & 
+{\textbf{Industrial}} & 
+{\textbf{Pasture}} & 
+{\textbf{Permanent Crop}} & 
+{\textbf{Residential}} & 
+{\textbf{River}} & 
+{\textbf{Sea/Lake}} \\ \hline
+ResNet-Nat-MoCO     & \textbf{0.97} & \textbf{0.99} & 0.96 & 0.94 & 0.98 & 0.95 & 0.94 & \textbf{0.99} & 0.95 & \textbf{0.99} \\
+ResNet-Nat-DINO     & \textbf{0.97} & \textbf{0.99} & \textbf{0.97} & 0.95* & \textbf{0.99} & \textbf{0.97} & \textbf{0.95} & \textbf{0.99} & \textbf{0.96} & \textbf{0.99} \\
+ResNet-Sat-MoCO     & 0.86 & 0.77 & 0.79 & 0.59 & 0.93 & 0.68 & 0.80 & 0.88 & 0.55 & 0.81 \\
+ResNet-scratch      & 0.74 & 0.82 & 0.59 & 0.36 & 0.72 & 0.65 & 0.48 & 0.72 & 0.49 & 0.83 \\
+ViT-Nat-DINO        & 0.96* & \textbf{0.99} & 0.96* & \textbf{0.96} & \textbf{0.99} & 0.96* & 0.94* & \textbf{0.99} & 0.94* & \textbf{0.99} \\
+ViT-Nat-JEPA        & 0.94 & \textbf{0.99} & 0.94 & 0.84 & \textbf{0.96} & 0.93 & 0.88 & \textbf{0.99} & 0.87 & \textbf{0.99} \\
+ViT-Sat-DINO        & 0.84 & 0.84 & 0.80 & 0.57 & 0.91 & 0.74 & 0.71 & 0.87 & 0.62 & 0.84 \\
+ViT-Sat-MoCO        & 0.83 & 0.84 & 0.81 & 0.57 & 0.94 & 0.72 & 0.74 & 0.90 & 0.60 & 0.82 \\
+ViT-scratch         & 0.79 & 0.81 & 0.71 & 0.40 & 0.89 & 0.70 & 0.66 & 0.85 & 0.54 & 0.81 \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/herbveg-as-permcrop.png}
+    \caption{An example of a \textit{Herbaceous Vegetation} sample that is confused by models the most compared to a random sample of the \textit{Permanent Crop} class}
+    
+    \label{fig:herb-as-crop}
+\end{figure}
+
+\section{BigEarthNet Sample Efficiency}
+
+Our baseline emphasized that the pretrained models achieve similar performance across their architectures utilizing the full dataset for fine-tuning with accuracies ranging from $68.6\%$ to $69.6\%$ for ResNet and $66.4\%$ to $69.4\%$ for ViT-s. When we look at the results of our sample efficiency experiment we can see that the satellite models consistently outperform the natural models. At $10\%$ data, ResNet-sat-MoCO achieves $0.697$ F1 score compared to the natural ResNets $0.650$. With more data ($20\%$ to $70\%$), the ResNet-sat-MoCO model still performs better albeit by a smaller margin. This indicates that the in-domain pretraining allows the model to learn useful inductive biases for data efficiency. Within the ViT models, the scratch model is quite performant in low data ($10\%$ to $20\%$) compared to the naturally pretrained models and slightly better than ViT-Sat-DINO but underperforming against ViT-Sat-MoCO. The satellite pretraining models beat out the naturally pretrained models by a substantial margin achieving a gap of $.1$ to $.2$ across all of the dataset sizes on F1 score. Satellite pretraining is consistently outperforming natural pretraining across sample sizes and architectures until $70\%$ to $100\%$ of the dataset is used. Our results indicate that in domain pretraining improves the sample efficiency. Satellite pretrained models outperform the natural and pretrained models in $10$-$20\%$ showing the inductive biases learned are quite useful for data efficiency. While linear probing showed the natural models have quite strong representations, they may make it difficult to learn new biases to transfer when more data is available. This is evident in the low performance across natural models especially in ViT-Nat-JEPA that collapses to a quite poor $0.538$ F1 score and $46\%$ accuracy. We also see a considerable gap between the ResNet models and the ViT models as ResNets have more stable performance gain over the course of the sample efficiency experiment whereas the ViT needs lots of data to begin performing well.
+
+\begin{table}[h]
+\centering
+\caption{Validation F1 Score on BigEarthNet at different percentages of training data.}
+\label{tab:sample-efficiency}
+\begin{tabular}{l *{6}{S[table-format=1.3]}}
+\hline
+\textbf{Model} & 
+{\textbf{0\%}} & 
+{\textbf{10\%}} & 
+{\textbf{20\%}} & 
+{\textbf{50\%}} & 
+{\textbf{70\%}} & 
+{\textbf{100\%}} \\ \hline
+ResNet-Nat-DINO     & 0.446 & 0.667 & 0.695 & 0.727 & 0.735 & 0.769 \\
+ResNet-Nat-MoCO     & 0.518 & 0.648 & 0.681 & 0.713 & 0.720 & 0.773 \\
+ResNet-Sat-MoCO     & 0.488 & 0.696 & 0.713 & 0.735 & 0.739 & 0.775 \\
+ResNet-Scratch      & 0.497 & 0.700 & 0.728 & 0.762 & 0.770 & 0.780 \\
+ViT-Nat-DINO        & 0.518 & 0.628 & 0.646 & 0.669 & 0.674 & 0.765 \\
+ViT-Nat-JEPA        & \textbf{0.554} & 0.538 & 0.601 & 0.648 & 0.658 & 0.761 \\
+ViT-Sat-DINO        & 0.542 & 0.695 & 0.714 & 0.740 & 0.762 & 0.750 \\
+ViT-Sat-MoCO        & 0.531 & \textbf{0.718} &\textbf{0.746} & \textbf{0.765} & \textbf{0.773} & \textbf{0.771} \\
+ViT-Scratch         & 0.446 & 0.698 & 0.730 & 0.760 & 0.766 & 0.746 \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Feature Space Analysis}
+
+While the fine-tuning, linear probing, and sample efficiency experiments reveal clear performance trends, they also raise deeper questions. Why do natural-pretrained models yield superior features for linear probing, yet satellite-pretrained models perform better in low-data fine-tuning? Why do scratch models eventually close the gap when given enough supervision? To better understand these phenomena, we move beyond task performance and investigate the internal representations of our models directly through feature space analysis. To do this we utilize H-score, Calinski–Harabasz Index and Intrinsic dimensions.
+
+\subsection{H-Score.}
+
+The H-score is a statistical measure of the discriminative power of feature embeddings. It is defined as the trace of the product between the inverse covariance of the overall features and covariance of the class-conditional features. In practice, it evaluates how well different classes are separated in the representation space. Within machine learning, this can be used to assess the transferability of the learned features without requiring training on the target task. A higher H-score suggests that the learned embeddings capture separate objects distinctly in a way that could generalize to new tasks and in the case of our study, new domains.
+
+\begin{equation}
+H = \mathrm{Tr}\left( \Sigma^{-1} \Sigma_B \right)
+\end{equation}
+
+where $\Sigma$ is the covariance matrix of all feature embeddings:
+\begin{equation}
+\Sigma = \frac{1}{N} \sum_{i=1}^{N} (f_i - \bar{f})(f_i - \bar{f})^{T}
+\end{equation}
+
+and $\Sigma_B$ is the between-class covariance matrix:
+\begin{equation}
+\Sigma_B = \frac{1}{C} \sum_{c=1}^{C} (\bar{f}_c - \bar{f})(\bar{f}_c - \bar{f})^{T}
+\end{equation}
+
+Here, $f_i$ is the feature vector of sample $i$, $\bar{f}$ is the global mean feature vector, $\bar{f}_c$ is the mean feature vector of class $c$, $N$ is the total number of samples, and $C$ is the number of classes.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/h-score.png}
+    \caption{H-score for the ResNet-Sat-MoCO (SAT), ResNet-Nat-MoCO (NAT) and ResNet-scratch (BASE) across the selected layers. }
+    
+    \label{Reference: h-score-figures}
+\end{figure}
+
+\subsection{Calinski-Harabasz Index.}
+
+The Calinski-Harabasz Index, also known as the variance ratio criterion, measures clustering quality by comparing between-cluster dispersion against within cluster dispersion. This is normalized by the number of clusters and data points. A higher score indicates more compact and well separated clusters. In machine learning, this metric is frequently used to evaluate unsupervised representations. This leads to finding data that groups well without labels. When applied in this context of representation analysis for downstream transfer, a high VRC implies that the features form tight, distinct grouping that may facilitate effective adaptation to new tasks.
+
+\begin{equation}
+\mathrm{VRC} = \frac{\mathrm{Tr}(B_k)}{\mathrm{Tr}(W_k)} \times \frac{N - k}{k - 1}
+\end{equation}
+
+where $B_k$ is the between-cluster dispersion matrix:
+\begin{equation}
+B_k = \sum_{i=1}^{k} n_i (\mu_i - \mu)(\mu_i - \mu)^{T}
+\end{equation}
+
+and $W_k$ is the within-cluster dispersion matrix:
+\begin{equation}
+W_k = \sum_{i=1}^{k} \sum_{x \in C_i} (x - \mu_i)(x - \mu_i)^{T}
+\end{equation}
+
+Here, $N$ is the total number of samples, $k$ is the number of clusters (classes), $n_i$ is the number of points in cluster $i$, $\mu_i$ is the centroid of cluster $i$, and $\mu$ is the overall mean.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/vrc.png}
+    \caption{Variance Ratio Criterion for the ResNet-Sat-MoCO (SAT), ResNet-Nat-MoCO (NAT) and ResNet-scratch (BASE) across the selected layers. }
+    
+    \label{Reference: vrc-figure}
+\end{figure}
+\subsection{Intrinsic Dimension.}
+
+The intrinsic dimension characterizes the effective dimensionality of a data manifold, often estimated with techniques such as the TwoNN method based on nearest-neighbor distance ratios. It reflects how many degrees of freedom are needed to capture the structure of the data. With deep learning models, intrinsic dimensions can be used to study representation efficiency, model complexity and generalization capacity. For downstream transfer analysis, a lower intrinsic dimension suggests that the features compress information into a compact structure. Fewer degrees of freedom may indicate the model's ability to capture essential information with less degrees to make them more transferable.
+
+\begin{equation}
+\mathrm{ID} = \left[ \frac{1}{N-1} \sum_{i=1}^{N-1} \log\left( \frac{r_{i,2}}{r_{i,1}} \right) \right]^{-1}
+\end{equation}
+
+where $r_{i,1}$ and $r_{i,2}$ are the distances from point $i$ to its first and second nearest neighbors, respectively, and $N$ is the total number of data points.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/id.png}
+    \caption{Intrinsic Dimensions for the ResNet-Sat-MoCO (SAT), ResNet-Nat-MoCO (NAT) and ResNet-scratch (BASE) across the selected layers. }
+    
+    \label{Reference: intrinsic-dimensions-figure}
+\end{figure}
+
+\subsection{Representation Quality Pushes Performance.}
+
+We analyzed the learned feature space of ResNet-Nat-MoCO(NAT) and ResNet-Sat-MoCO(SAT) before training as well as with ResNet-Scratch(BASE) as a baseline. We utilized the aforementioned H-score, Calinski-Harabasz Index and intrinsic dimensionality. These results are then contextualized with linear probing on EuroSAT, sample efficiency on BigEarthNet and the full fine tuning performance. 
+
+The NAT model consistently achieved the highest H-scores across layers, especially the deepest layers, reaching up to 13 at the pooling layer compared to that of 5.9 and 5.2 for the baseline. This indicates substantially greater linear separability in the NAT representations. The effects of this are shown in the performance on EuroSAT linear probing as the models pretrained on natural images greatly outperform the others on all of the classes including the NAT model. 
+For the Calinski-Harabasz Index  (VRC), both NAT and SAT displayed strong between and within cluster dispersion ratio (VRC $> 700$), far separating them from BASE ($< 200$)  as expected. NAT layers peaked above 1300 in layer 3 and dropped slightly in layer 4 and the pooling. These results align with the performance of NAT on the linear probing experiment. SAT had higher VRC at the earlier layers which indicates tighter and better-separated feature clusters, suggesting that early-layer representations capture structured and coherent information of low-level information. These features are shown to be useful in the lower data regimes of our sample efficiency experiment as an in fomain bias.
+
+The pretrained models NAT and SAT have high complexity. The NAT has the highest at $78$ in the pooling layer opposed to SAT’s $36$. The BASE model gets $2$ at the pooling layer. This indicates an expressiveness present in the NAT model as opposed to the SAT and BASE model. The NAT model features take up a large dimensional space allowing for more complex features whereas, the SAT model has learned less complex features with more compactness. This aligns with SAT's strong performance in low data domains as the features are lower dimensional allowing them to be adapted with less data than NAT that needs more data to realign its high dimensional features. 
+
+With abundant data, NAT and SAT converge to similar accuracies ($\sim0.69$ – $0.70$), with scratch-trained models slightly ahead in some cases. This suggests that NAT’s high-dimensional features can be fully leveraged given enough labels, but SAT’s compactness provides an advantage when data is scarce. NAT yields highly separable, well-clustered features that excel in linear transfer but demand more data due to their higher intrinsic dimensionality. SAT, while less separable, is more sample-efficient because of its compact feature manifolds. This trade-off highlights that model selection for transfer depends on the target data regime: NAT for abundant labels, SAT for low-label efficiency.
+
+Further visualization and analysis of the features spaces of these model are available in Appendix \ref{app:feat-cluster}.
+
+\chapter{Discussion}
+
+Through our experiments and feature space analyses we found that natural pretraining yields more discriminative and better separated representations, which supports strong linear probing performance. Satellite pretraining, in contrast, produces well structured low level features in early layers that enable efficient learning in low data regimes, but these features are less separable and thus weaken linear probing. This distinction drives the choice of a naturally pretrained model when no further training is possible. The advantage likely stems from data scale, since ImageNet exceeds SSL4EO even with all channels, and from differences in the visual statistics of natural and satellite imagery.
+
+The VRC results further show that satellite models learn strong early layer features that match the low level patterns found in remote sensing data, while natural models benefit from more complex objects and larger training corpora that encourage higher quality, more separable feature spaces. When labeled data is available, these inductive biases matter: satellite models can quickly adapt their lower level features to downstream tasks.
+
+Architectural biases also influence performance. ResNets consistently outperform ViTs, likely due to convolutional filters that align well with image structure and gradients in low level features. ViT attention mechanisms may struggle to capture these patterns as effectively.
+
+Our study is limited to RGB inputs and a single task, image classification. Future work should explore multispectral data and broader remote sensing tasks such as change detection and segmentation. Architectural coverage is also limited. Although ResNet and ViT are widely used, other models such as Swin\cite{liu2021swintransformerhierarchicalvision, rs13234779} are common in remote sensing but were excluded due to the lack of publicly available models pretrained on both natural and satellite data.
+
+\chapter{Conclusion}
+
+Our experiments show that in-domain pretraining is optimal when only limited labeled data is available, while out-of-domain pretraining on large and complex datasets such as ImageNet is more suitable in settings with no fine-tuning, where linear probing is applied. When abundant labeled data is available, pretrained models achieve strong performance during early training epochs, while training from scratch reaches the highest performance over longer training.
+
+These results can be understood in terms of feature characteristics. Natural image pretraining yields highly discriminative but high-dimensional representations, well-suited for linear probing. In contrast, satellite-specific pretraining produces more compact, domain-adapted features, advantageous in data-scarce regimes. We also find that architectural inductive biases matter: ResNets exhibit stronger robustness and transferability in remote sensing tasks compared to ViTs.
+
+The broader implication is that transfer learning in remote sensing should be guided by both data availability and the computational budget. Current benchmarks often focus on abundant-data scenarios, which may underrepresent the importance of sample efficiency and understate the value of sample-efficient models, potentially biasing the evaluation of progress in the field.
+
+Looking ahead, several directions appear critical. Extending this analysis to multispectral and multimodal data could reveal how pretraining interacts with richer sensing modalities. Investigating the role of pretraining dataset characteristics,such as sampling density, resolution, and object diversity, would clarify whether future advances hinge on simply scaling datasets or on designing better objectives and architectures tailored to remote sensing. Ultimately, closing the performance gap may require a balance of scale and domain alignment, as well as a deeper understanding of the representations that emerge from large-scale self-supervised training.
+
+%==========================================================================================%
+% APPENDIX
+%==========================================================================================%
+\appendix     
+%After this command, chapters will be formatted as appendices. 
+\chapter{Model and Pretraining Summary}
+\label{app:model-summary}
+
+
+This section describes the pretrained weights and model configurations used in our experiments.
+
+\subsection{ResNet Models.}
+
+We used the ResNet-50 architecture from the TorchGeo\cite{stewart2022torchgeo} package, which inherits from timm\cite{rw2019timm}. TorchGeo provides normalization and initialization statistics for its pretrained weights.
+
+ResNet-Sat-MoCO uses weights from the SSL4EO\cite{wang2023ssl4eos12largescalemultimodalmultitemporal} project. The model was trained on Sentinel-2 L1C RGB imagery from the SSL4EO-S12 dataset using MoCO-v2\cite{mocov2chen2020improvedbaselinesmomentumcontrastive} for $100$ epochs on four A100 GPUs. The authors applied the RandomSeasonContrast augmentation, which selects two random seasonal views of the same patch.
+
+ResNet-Nat-DINO and ResNet-Nat-MoCO use pretrained ImageNet weights from their respective DINOv1\cite{DINOcaron2021emergingpropertiesselfsupervisedvision} and MoCOv3\cite{mocov3chen2021empiricalstudytrainingselfsupervised} implementations. Both models use the Torchvision\cite{torchvision} ResNet-v1.5 architecture\cite{he2015delvingdeeprectifierssurpassing}. The DINO model trained for $100$ epochs, and the MoCOv3 model trained for $100$ epochs with a batch size of $4096$. To integrate these weights into the TorchGeo implementation, we renamed some modules to match TorchGeo’s naming conventions. The weight shapes matched exactly, confirming architectural equivalence.
+
+ResNet-Scratch uses the same TorchGeo implementation but with random initialization.
+
+\subsection{Vision Transformer Models.}
+
+We used ViT-Small architectures with a $16 \times 16$ patch size for all Vision Transformer experiments.
+
+ViT-Sat-MoCO and ViT-Sat-DINO use pretrained weights from the SSL4EO-S12 Sentinel-2 L1C dataset. Each model trained for $100$ epochs with a batch size of $256$ on four A100 GPUs using MoCOv3 and DINO, respectively. We accessed both weights through the TorchGeo package.
+
+Because these models were pretrained on multispectral Sentinel-2 inputs while our evaluation datasets use RGB imagery, we adapted their patch embedding layers. The original patch embedding convolution has weight shape $[D,13,16,16]$ for $13$ input channels. We reparameterized it to $[D,3,16,16]$ by applying a fixed linear projection from $13$ to $3$ channels. This projection selects and combines the red (B4), green (B3), and blue (B2) bands, preserving spatial filters and visible-band relationships. This adaptation enables effective transfer from multispectral to RGB domains without retraining.
+
+ViT-Nat-MoCO and ViT-Nat-DINO were pretrained on ImageNet using MoCOv3 and DINO, respectively, with the timm implementation of ViT-Small. The MoCO model trained for $300$ epochs with a batch size of $1024$, while the DINO model trained for $100$ epochs with the same batch size.
+
+ViT-Nat-JEPA uses the authors’ I-JEPA implementation with a ViT-Small (16x16) architecture. It trained on ImageNet for $300$ epochs with a batch size of $608$ on two L40s GPUs.
+
+ViT-Scratch uses the TorchGeo ViT-Small implementation with random initialization.
+
+%==========================================================================================%
+%==========================================================================================%
+\chapter{Feature Space Cluster Analysis}
+\label{app:feat-cluster}
+We applied a dimensionality reduction and a clustering to the features at every layer of each model. The dimensionality reduction method we utilized was Uniform Manifold Approximation and Projection (UMAP)  for visualization, and K-means for the unsupervised clustering. We evaluated these clusters with Normalized Mutual Information (NMI) and an approximation for purity for multi-label samples.
+
+\subsection{Dimensionality Reduction with UMAP.}
+Feature embeddings from each model and layer were standardized and projected into a two-dimensional space using UMAP. The reducer was configured with $15$ neighbors and a minimum distance of $0.1$, and a fixed random seed to ensure reproducibility. UMAP preserves both local and global structures, allowing interpretable visual separation of feature clusters. 
+
+\subsection{Clustering with K-Means.}
+K-means clustering was applied to the standardized feature space for each model-layer pair. The number of clusters was set to the number of target classes; 43. Cluster assignments were used to asses the alignment between the supervised partitions and label structure. Cluster centroids were projected into the UMAP space for visual inspection and spatial consistency.
+
+\subsection{Clustering Metrics.}
+The Normalized Mutual Information metric is computed between the dominant label in the cluster per sample and the cluster assignment. We compute the mutual information between these two. This captures the global consistency between clusters and class distributions. Where $y_i^{dom} = arg max_k (y_{ik})$ and the cluster label $c_i$.
+$$
+NMI(Y^{dom}, C) = \frac{2I(Y^{dom};C}{H(Y^{dom}) + H(C)}
+$$ 
+where 
+$$
+I(Y^{dom}; C) = \sum_{y\in Y^{dom}}\sum_{c\in C} p(y,c) log \frac{p(y,c)}{p(y)p(c)}
+$$
+is the mutual information between the dominant labels and the clusters and
+$$
+H(X) = -\sum_xp(x)log\,p(x) 
+$$
+is the Shannon entropy.
+NMI ranges from $0$ (no shared information) to $1$ (perfect correspondence).
+
+Our approximation of multi-label purity is a custom metrics estimating the average pairwise Jaccard similarity of labels sets within each cluster. To avoid large memory costs, we randomly subsample samples per cluster. This purity score measures intra-cluster label coherence for our multi-label data.
+
+For multi-label datasets where each samples has a binary label vector $y_i\in {0,1}^L$, the pairwise Jaccard similarity between samples $i$ and $j$ is defined as
+$$
+J(y_i, y_j) = \frac{|y_i\cap y_j|}{|y_i \cap y_j} = \frac{y_i^Ty_j}{||y_i||_1 + ||y_j||_1 - y_i^Ty_j}
+$$.
+Cluster-level purity $P_j$ measures the average intra-cluster Jaccard similarity.
+$$
+P_j = \frac{1}{|C_j|^2} \sum_{i,k\in C_j} J(y_i, y_K)
+$$
+The overall multi-label purity across all $k$ clusters is given by
+$$
+Purity  = \frac{1}{k}\sum_{j=1}^{k}P_j
+$$
+This metric captures how label sets cohere within clusters, extending traditional single label purity to multi-label context by leveraging set similarity through the Jaccard index.
+
+\subsection{Cluster Compactness and Alignment.}
+Across models, both NMI and purity generally increase with network depth, indicating that deeper layers progressively encode higher-level abstractions even without downstream training. The NAT model shows the strongest overall alignment, reaching an NMI of $0.263$ and purity of $0.297$ at the pooling layer. SAT follows a similar trajectory but peaks earlier, likely due to its pretraining on satellite data with less high-level object variability. These patterns suggest that pretraining on diverse natural imagery produces more linearly separable and semantically coherent feature groupings when transferred to new domains. Quantitative results are summarized in Table~\ref{tab:cluster-results}, and qualitative patterns are shown in Figures~\ref{fig:nat-clusters}, \ref{fig:sat-clusters}, and \ref{fig:base-clusters}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/nat-class-cluster.png}
+    \caption{UMAP feature clustering visualization for the NAT model. Clusters correspond to $k=43$ centroids overlaid on two-dimensional embeddings. Color denotes dominant label per sample. }
+    
+    \label{fig:nat-clusters}
+\end{figure}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/sat-class-cluster.png}
+    \caption{ UMAP feature clustering visualization for the SAT model. Tight early-layer clusters highlight compact representations suited for low-data fine-tuning.}
+    
+    \label{fig:sat-clusters}
+\end{figure}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Images/base-class-cluster.png}
+    \caption{UMAP Feature Clustering Visualization for the BASE model. Clusters correspond to $k=43$ centroids overlaid on two-dimensional embeddings. Color denotes dominant label per sample.  }
+    
+    \label{fig:base-clusters}
+\end{figure}
+
+
+\begin{table}[!htbp]
+\centering
+\caption{Normalized Mutual Information (NMI) and multi-label purity across model stages. Values correspond to $k=43$ clusters.}
+\label{tab:cluster-results}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lcccccc}
+\hline
+Model & conv1 & layer1 & layer2 & layer3 & layer4 & pool \\ 
+\hline
+SAT  & 0.177 / 0.171 & 0.181 / 0.180 & 0.181 / 0.190 & 0.195 / 0.203 & 0.158 / 0.173 & 0.218 / 0.258 \\
+NAT  & \textbf{0.190} / 0.184 & \textbf{0.202} /\textbf{ 0.205} & \textbf{0.221} / \textbf{0.228} & \textbf{0.237} / \textbf{0.277} & \textbf{0.211} / \textbf{0.211} & \textbf{0.263} / 0.297 \\
+BASE & 0.189 / \textbf{0.191} & 0.197 / 0.183 & 0.197 / 0.180 & 0.188 / 0.176 & 0.175 / 0.161 & 0.215 / \textbf{0.305} \\
+\hline
+\end{tabular}
+}
+
+\end{table}
+%==========================================================================================%
+% BIBLIOGRAPHY
+%==========================================================================================%
+\safebibliography{etdbib.bib}
+\bibliographystyle{plain}
+%==========================================================================================%
+%==========================================================================================%
+
+
+\end{document}
