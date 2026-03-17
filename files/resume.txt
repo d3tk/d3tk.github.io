@@ -1,6 +1,9 @@
 Declan Kutscher 
-declank@berkeley.edu │ https://www.linkedin.com/in/detk │ https://d3tk.github.io
+declank@umd.edu │ https://www.linkedin.com/in/detk │ https://d3tk.github.io
 EDUCATION
+
+University of Maryland, College Park, PhD. in Computer Science	       August 2026 - Present
+Advisor: Dr. Ritwik Gupta
 
 University of Pittsburgh, M.S. in Computer Science	       January 2024 - December 2025
 Thesis: On the Effectiveness of Pretrained Models For Remote Sensing
