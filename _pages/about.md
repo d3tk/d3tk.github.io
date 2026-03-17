@@ -12,7 +12,7 @@ redirect_from:
 
 {% include base_path %}
 
-My name is Declan Kutscher and I currently work as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) with [Dr. Ritwik Gupta](https://ritwikgupta.me/), and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
+My name is Declan Kutscher and I am an incoming **Ph.D. student in Computer Science** at the **University of Maryland, College Park**, where I will be advised by [Dr. Ritwik Gupta](https://ritwikgupta.me/). Before starting at UMD, I worked as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
 
 I previously completed my **M.S. in Computer Science** at the University of Pittsburgh, where I worked with [Dr. Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) on **machine learning for climate and environmental systems**. My thesis examined the effectiveness of **in-domain pretraining for remote sensing** tasks.
 
@@ -22,4 +22,4 @@ I am especially interested in **attention and perception strategies** that impro
 
 Outside of research, I enjoy [backpacking](/photos/), film, music, and cats.
 
-Feel free to contact me at **declank @ berkeley.edu**. I am always open to new collaborations.
+Feel free to contact me at **declank @ umd.edu**. I am always open to new collaborations.
