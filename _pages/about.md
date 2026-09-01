@@ -12,9 +12,9 @@ redirect_from:
 
 {% include base_path %}
 
-I build **adaptive learning systems** that decide what information to process, when to compute, and how to generalize under real-world constraints.
+I build **learning systems that develop useful representations and behaviors from unlabeled data and interaction**. My research sits at the intersection of **self-supervised learning, world models, adaptive perception, and NeuroAI**, with an interest in how artificial agents learn, represent, and act on information and how those representations relate to **neural activity in biological systems**.
 
-I am a **Ph.D. student in Computer Science** at the **University of Maryland, College Park**, advised by [Dr. Ritwik Gupta](https://ritwikgupta.me/). Before starting at UMD, I worked as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
+I am a **Ph.D. student in Computer Science** at the **University of Maryland, College Park**, advised by [Dr. Ritwik Gupta](https://ritwikgupta.me/). Previously, I worked as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
 
 ## Currently
 
@@ -32,9 +32,11 @@ REOrder improves top-1 accuracy over row-major ordering by up to **3.01% on Imag
 
 ## Research Interests
 
-My research focuses on **self-supervised systems** that allocate computation and representation adaptively for the real world. I work across **computer vision, remote sensing, and reinforcement learning**, with recent projects in **physics-guided graph learning**, **long-sequence vision models**, and **world-model based skill discovery**.
+My research broadly asks how learning systems can **build useful internal representations of the world and use them to perceive, reason, and act**.
 
-I am especially interested in **attention and perception strategies** that improve **efficiency, robustness, and generalization** for **climate, disaster response, and embodied intelligence** applications.
+I am particularly interested in **self-supervised learning, world models, reinforcement learning, adaptive perception, and NeuroAI**. A major direction of my work is understanding how representations and behaviors emerge in artificial agents and how they compare with **representations observed in neuroscience**.
+
+My recent work spans **neural representation analysis, embodied skill discovery, vision-language models, long-sequence vision, and remote sensing**. I am also interested in applying these ideas to challenging real-world domains including **climate, disaster response, and autonomous systems**.
 
 I previously completed my **M.S. in Computer Science** at the University of Pittsburgh, where I worked with [Dr. Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) on **machine learning for climate and environmental systems**. My thesis examined the effectiveness of **in-domain pretraining for remote sensing** tasks.
 
