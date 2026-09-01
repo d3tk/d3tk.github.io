@@ -16,12 +16,6 @@ I build **learning systems that develop useful representations and behaviors fro
 
 I am a **Ph.D. student in Computer Science** at the **University of Maryland, College Park**, advised by [Dr. Ritwik Gupta](https://ritwikgupta.me/). Previously, I worked as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
 
-## Currently
-
-- Ph.D. student at UMD, focused on adaptive perception and self-supervised systems.
-- Working on efficient foundation models, long-sequence vision, remote sensing, and world-model based skill discovery.
-- Open to collaborations on adaptive computation, robust perception, climate and disaster response, and embodied intelligence.
-
 ## Selected Research
 
 ### [REOrdering Patches Improves Vision Models](/publication/2025-05-29-reorder)
