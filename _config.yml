@@ -11,7 +11,7 @@ locale: "en-US"
 title: "Declan K."
 title_separator: "-"
 name: &name "Declan K."
-description: &description "Incoming PhD Student @ University of Maryland Computer Science | building adaptive self-supervised systems for the real world."
+description: &description "PhD Student @ University of Maryland Computer Science | building adaptive self-supervised systems for the real world."
 url: https://d3tk.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "d3tk/d3tk.github.io"
@@ -24,7 +24,7 @@ author:
   avatar: "profile.png"
   name: "Declan Kutscher"
   pronouns: "He/Him" # example: "she/her"
-  bio: "Incoming PhD Student @ University of Maryland Computer Science | building adaptive self-supervised systems for the real world."
+  bio: "PhD Student @ University of Maryland Computer Science | building adaptive self-supervised systems for the real world."
   location: "College Park, MD"
   employer: "University of Maryland, College Park"
   uri: # URL
@@ -78,10 +78,10 @@ author:
 publication_category:
   books:
     title: "Books"
-  manuscripts:
-    title: "Journal Articles"
   conferences:
     title: "Conference Papers"
+  manuscripts:
+    title: "Journal Articles"
   white-papers:
     title: "White Papers"
 

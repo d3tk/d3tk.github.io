@@ -14,11 +14,11 @@ redirect_from:
 
 I build **adaptive learning systems** that decide what information to process, when to compute, and how to generalize under real-world constraints.
 
-I am an incoming **Ph.D. student in Computer Science** at the **University of Maryland, College Park**, where I will be advised by [Dr. Ritwik Gupta](https://ritwikgupta.me/). Before starting at UMD, I worked as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
+I am a **Ph.D. student in Computer Science** at the **University of Maryland, College Park**, advised by [Dr. Ritwik Gupta](https://ritwikgupta.me/). Before starting at UMD, I worked as a **Research Engineer** with [Dr. Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and as a **Visiting Student Researcher** in the [NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University led by [Dr. Aran Nayebi](https://anayebi.github.io/).
 
 ## Currently
 
-- Starting my Ph.D. at UMD, focused on adaptive perception and self-supervised systems.
+- Ph.D. student at UMD, focused on adaptive perception and self-supervised systems.
 - Working on efficient foundation models, long-sequence vision, remote sensing, and world-model based skill discovery.
 - Open to collaborations on adaptive computation, robust perception, climate and disaster response, and embodied intelligence.
 
