@@ -1,6 +1,8 @@
 ---
 title: "Tinted Frames: Question Framing Blinds Vision-Language Models"
 collection: publications
+paper_label: "Project"
+authors: "Wan-Cyuan Fan, Jiayun Luo, Declan Kutscher, Leonid Sigal, Ritwik Gupta"
 category: conferences
 permalink: /publication/2026-03-19-tinted-frames
 excerpt: 'We show that vision-language models are selectively blind: linguistic framing alters visual attention, degrading grounding and accuracy. We introduce a prompt-tuning method that realigns attention and restores performance.'

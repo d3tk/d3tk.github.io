@@ -1,0 +1,14 @@
+<article class="archive__item" itemscope itemtype="https://schema.org/ScholarlyArticle">
+  {% assign publication_year = post.date | date: "%Y" %}
+  <p class="publication-meta">{{ post.venue }}{% unless post.venue contains publication_year %} · {{ publication_year }}{% endunless %}</p>
+  <h3 class="archive__item-title" itemprop="headline"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+  {% if post.authors %}<p class="publication-authors">{{ post.authors | escape | replace: "Declan Kutscher", "<strong>Declan Kutscher</strong>" }}</p>{% endif %}
+  {% if post.excerpt %}<div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>{% endif %}
+  <p><a href="{{ base_path }}{{ post.url }}">Research details</a>{% if post.paperurl %} · <a href="{{ post.paperurl }}">{{ post.paper_label | default: "Paper" }}</a>{% endif %}{% if post.slidesurl %} · <a href="{{ post.slidesurl }}">Slides</a>{% endif %}</p>
+  {% if post.citation %}
+  <details class="publication-citation">
+    <summary>Citation</summary>
+    <p>{{ post.citation }}</p>
+  </details>
+  {% endif %}
+</article>

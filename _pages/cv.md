@@ -9,6 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-<!-- markdownlint-disable MD033 -->
-<iframe src="https://docs.google.com/document/d/1tUJ9F_J9Sn0AphTGACf5gipuiFy56pplwwrftFFSQyk/preview" type="application/pdf" width="100%" height="640dip"></iframe>
-<!-- markdownlint-enable MD033 -->
+<p><a href="https://docs.google.com/document/d/1tUJ9F_J9Sn0AphTGACf5gipuiFy56pplwwrftFFSQyk/preview">Open CV in a separate page</a> if the embedded document does not load.</p>
+
+<iframe class="cv-embed" title="Declan Kutscher's curriculum vitae" src="https://docs.google.com/document/d/1tUJ9F_J9Sn0AphTGACf5gipuiFy56pplwwrftFFSQyk/preview" loading="lazy"></iframe>

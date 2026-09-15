@@ -1,7 +1,8 @@
 ---
 title: "On the Effectiveness of Pretrained Models for Remote Sensing"
 collection: publications
-category: manuscripts
+authors: "Declan Kutscher"
+category: theses
 permalink: /publication/2025-12-01-remote-sensing-thesis
 excerpt: "M.S. thesis analyzing when ImageNet or satellite pretraining helps remote sensing, and how representation quality drives transfer."
 date: 2025-10-17

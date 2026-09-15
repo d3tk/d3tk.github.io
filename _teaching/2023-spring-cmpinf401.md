@@ -1,5 +1,5 @@
 ---
-title: "CMPINF 0401 INTERMEDIATE PROGRAMMING (Spring '23)"
+title: "CMPINF 0401: Intermediate Programming (Spring 2023)"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2023-spring-cmpinf401

@@ -9,6 +9,8 @@ author_profile: true
 
 {% assign image_files = site.static_files | sort: "path" %}
 
+<p>Photographs from backpacking trips in Iceland and the Wind River Range.</p>
+
 <div class="image-gallery">
   {% for file in image_files %}
     {% assign ext = file.extname | downcase %}
@@ -17,7 +19,7 @@ author_profile: true
         {% assign relative = file.path | remove_first: site.source %}
         {% assign image_url = relative | prepend: base_path %}
         <a class="image-gallery__item" href="{{ image_url }}">
-          <img src="{{ image_url }}" alt="{{ file.basename | replace: '-', ' ' | replace: '_', ' ' }}">
+          <img src="{{ image_url }}" loading="lazy" decoding="async" alt="{{ file.basename | replace: '-', ' ' | replace: '_', ' ' }}">
         </a>
       {% endif %}
     {% endif %}

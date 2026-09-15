@@ -1,121 +1,97 @@
-/* ==========================================================================
-   Custom theme overrides
-   ========================================================================== */
-
-body {
-  background-color: transparent;
-  position: relative;
+/* A quiet reading surface, with landscape photography in the header. */
+html { font-size: 100%; }
+body { background: #fafbf9; line-height: 1.7; }
+#main { max-width: 1160px; margin-top: 3rem; padding: 0 1.5rem; }
+.page__inner-wrap { background: transparent; padding: 0; }
+.page, .archive { min-width: 0; }
+.page__content, .archive { font-size: 1.0625rem; }
+.page__title { line-height: 1.2; font-size: 2.25rem; letter-spacing: -0.025em; }
+.page__content h2 { margin-top: 2.6rem; padding-bottom: 0.65rem; font-size: 1.6rem; }
+.page__content h3 { font-size: 1.25rem; line-height: 1.4; }
+.page__content a, .archive a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.page__content p, .archive p { overflow-wrap: break-word; }
+.sidebar { padding: 0; background: transparent; box-shadow: none; border: 0; }
+.sidebar p, .sidebar li { font-size: 0.875rem; }
+.sidebar .author__name { font-family: $serif; font-size: 1.5rem; line-height: 1.25; }
+.author__avatar img { padding: 0; border: 0; }
+.author__bio { color: #48574c; }
+.author__urls a { padding-top: 0.3rem; padding-bottom: 0.3rem; }
+.masthead { background: #13261c; border-bottom: 0; box-shadow: none; }
+.masthead__inner-wrap { max-width: 1160px; padding: 0.7rem 1.5rem; }
+.masthead a { color: #f4f1e9; }
+.masthead a:hover { color: #fff; }
+.greedy-nav { background: transparent; }
+.greedy-nav .visible-links .masthead__menu-item--lg a { white-space: nowrap; }
+.greedy-nav button { background: #2b5a44; }
+.greedy-nav .hidden-links a { color: #1f3b2d; }
+.greedy-nav a[aria-current="page"]:before { transform: scaleX(1); }
+.page__hero--overlay { margin-bottom: 0; padding: 3.5rem 0; background-position: center 52%; }
+.page__hero--overlay .wrapper { max-width: 1160px; margin: auto; padding: 0 1.5rem; }
+.page__hero--overlay .page__title { max-width: 800px; font-size: 3rem; line-height: 1.15; }
+.page__hero--overlay .page__lead { margin-bottom: 0; font-size: 1.0625rem; }
+.page__hero-caption { font-family: $sans-serif; font-size: 0.8125rem; opacity: 1; background: rgba(19, 38, 28, 0.85); }
+.research-intro { font-size: 1.125rem; }
+.profile-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem 1.5rem; margin: 1.5rem 0 2.75rem; }
+.profile-actions a { display: inline-flex; align-items: center; min-height: 44px; }
+.profile-actions .profile-actions__primary { padding: 0.5rem 1rem; border-radius: 4px; background: #1f3b2d; color: #fff; text-decoration: none; font-weight: 600; }
+.profile-actions .profile-actions__primary:hover { background: #13261c; text-decoration: underline; }
+.research-highlight { padding: 1.5rem 0; border-bottom: 1px solid $border-color; }
+.research-highlight + .research-highlight { margin-bottom: 1.25rem; }
+.page__content .research-highlight__venue { margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 600; color: #49634f; }
+.research-highlight h3 { margin-top: 0; margin-bottom: 0.8rem; }
+.research-highlight h3 a { text-decoration: none; }
+.research-highlight p:last-child { margin-bottom: 0; }
+.list__item { padding-right: 0; }
+.archive__item { padding: 1.5rem 0; border-bottom: 1px solid $border-color; }
+.archive__item-title { margin-top: 0; font-family: $serif; font-size: 1.35rem; line-height: 1.35; }
+.archive__item-excerpt { font-size: 1rem; }
+.archive__item:hover .archive__item-title { text-decoration: none; }
+.publication-authors { font-size: 0.9375rem; }
+.publication-meta { color: #49634f; font-size: 0.875rem; }
+.publication-citation { font-size: 0.875rem; margin-top: 1rem; }
+.publication-citation summary { cursor: pointer; width: fit-content; padding: 0.25rem 0; }
+.publication-citation p { margin-top: 0.75rem; }
+.cv-embed { display: block; width: 100%; height: 75vh; min-height: 500px; border: 1px solid $border-color; background: #fff; }
+.image-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.image-gallery__item { display: block; overflow: hidden; border-radius: 4px; }
+.image-gallery__item img { display: block; width: 100%; height: 190px; object-fit: cover; }
+.skip-link { position: fixed; top: -100px; left: 1rem; padding: 0.6rem 1rem; z-index: 1000; color: #fff; background: #13261c; }
+.skip-link:focus { top: 0.5rem; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #b76b19; outline-offset: 4px; }
+[id] { scroll-margin-top: 90px; }
+@media (min-width: 925px) {
+  #main { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 3.5rem; }
+  #main::before, #main::after { display: none; }
+  #main > .sidebar { width: auto; margin: 0; padding: 0; float: none; }
+  #main > .page, #main > .archive { width: 100%; float: none; padding: 0; margin: 0; }
+  .page__related { grid-column: 2; margin-left: 0; }
 }
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.12;
-  filter: saturate(0.8) contrast(1.05);
+@media (max-width: 924px) {
+  #main { margin-top: 1.75rem; }
+  .sidebar { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid $border-color; }
+  .author__avatar { width: 64px; }
+  .author__avatar img { max-width: 64px; }
+  .author__content { padding-right: 12px; }
+  .sidebar .author__bio { display: none; }
+  .sidebar .author__name { font-size: 1.25rem; }
+  .page__hero--overlay .page__title { font-size: 2.25rem; }
 }
-
-body::before {
-  background-image: url("/images/windriver/IMG_0306.jpg");
-  background-position: left center;
+@media (max-width: 480px) {
+  #main, .masthead__inner-wrap, .page__hero--overlay .wrapper { padding-left: 1rem; padding-right: 1rem; }
+  .masthead__menu-item--lg { padding-right: 0.25rem; }
+  .greedy-nav a { margin: 0 0.6rem; }
+  .page__hero--overlay { padding: 2.5rem 0 3rem; }
+  .page__hero--overlay .page__title { font-size: 2rem; }
+  .author__avatar { width: 48px; }
+  .author__avatar img { max-width: 48px; }
 }
-
-body::after {
-  background-image: url("/images/windriver/IMG_0306.jpg");
-  background-position: right top;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
-
-#main {
-  position: relative;
-  z-index: 1;
-}
-
-.page__inner-wrap {
-  background: rgba(250, 248, 242, 0.85);
-  border: 1px solid rgba(31, 59, 45, 0.12);
-  border-radius: 14px;
-  padding: 1.75rem;
-  box-shadow: 0 18px 45px rgba(12, 22, 17, 0.08);
-
-  @include breakpoint($medium) {
-    padding: 2.25rem 2.5rem;
-  }
-}
-
-.sidebar {
-  background: rgba(250, 248, 242, 0.83);
-  border: 1px solid rgba(31, 59, 45, 0.12);
-  border-radius: 12px;
-  padding: 1.25rem 1rem;
-  box-shadow: 0 12px 30px rgba(12, 22, 17, 0.08);
-}
-
-@media screen and (min-width: $sidebar-screen-min-width) {
-  .sidebar {
-    padding-top: calc(#{$masthead-height} + 1.25rem);
-  }
-}
-
-.masthead {
-  background: #13261c;
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 6px 18px rgba(10, 20, 15, 0.2);
-}
-
-.masthead a {
-  color: #efe9dd;
-}
-
-.masthead a:hover {
-  color: #ffffff;
-}
-
-.greedy-nav {
-  background: transparent;
-}
-
-.greedy-nav button {
-  background-color: #2b5a44;
-}
-
-.page__title {
-  letter-spacing: -0.01em;
-}
-
-.page__content a {
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
-}
-
-/* Simple image gallery layout for /images/. */
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.image-gallery__item {
-  display: block;
-  border-radius: 12px;
-  overflow: hidden;
-  background: rgba(16, 30, 23, 0.08);
-  box-shadow: 0 8px 20px rgba(12, 22, 17, 0.12);
-}
-
-.image-gallery__item img {
-  display: block;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.2s ease;
-}
-
-.image-gallery__item:hover img {
-  transform: scale(1.03);
+@media print {
+  body { background: #fff; }
+  #main { display: block; }
+  .page__hero--overlay { background: none !important; padding: 0; }
+  .page__hero--overlay .page__title, .page__hero--overlay .page__lead { color: #000; text-shadow: none; }
+  .profile-actions, .page__hero-caption, .skip-link { display: none; }
 }
