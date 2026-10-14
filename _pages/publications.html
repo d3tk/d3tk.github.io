@@ -9,29 +9,28 @@ author_profile: true
 
 <div class="page__inner-wrap">
   {% if site.author.googlescholar %}
-    <div class="wordwrap">Research in machine learning, perception, and environmental systems. <a href="{{site.author.googlescholar}}">Google Scholar</a>.</div>
+  <div class="wordwrap">For a more thourough list of my research refer to my <a
+      href="{{site.author.googlescholar}}">Google Scholar</a>.</div>
   {% endif %}
 
   <!-- New style rendering if publication categories are defined -->
   {% if site.publication_category %}
-    {% for category in site.publication_category  %}
-      {% assign title_shown = false %}
-      {% for post in site.publications reversed %}
-        {% if post.category != category[0] %}
-          {% continue %}
-        {% endif %}
-        {% unless title_shown %}
-          <h2>{{ category[1].title }}</h2>
-          {% assign title_shown = true %}
-        {% endunless %}
-        {% include publication-entry.html %}
-      {% endfor %}
-    {% endfor %}
+  {% for category in site.publication_category %}
+  {% assign title_shown = false %}
+  {% for post in site.publications reversed %}
+  {% if post.category != category[0] %}
+  {% continue %}
+  {% endif %}
+  {% unless title_shown %}
+  <h2>{{ category[1].title }}</h2>
+  {% assign title_shown = true %}
+  {% endunless %}
+  {% include publication-entry.html %}
+  {% endfor %}
+  {% endfor %}
   {% else %}
-    {% for post in site.publications reversed %}
-      {% include publication-entry.html %}
-    {% endfor %}
+  {% for post in site.publications reversed %}
+  {% include publication-entry.html %}
+  {% endfor %}
   {% endif %}
 </div>
-
-

@@ -1,7 +1,5 @@
 ---
 permalink: /
-title: "Learning from experience."
-excerpt: "Self-supervised learning · NeuroAI · Earth observation"
 author_profile: true
 header:
   overlay_image: iceland/IMG_4584.jpg
@@ -31,21 +29,21 @@ I study how learning systems build useful representations of the world from **un
 <div class="research-highlight" markdown="1">
 <p class="research-highlight__venue">EMNLP 2026 · Vision-language models</p>
 
-### [Tinted Frames: Question Framing Blinds Vision-Language Models]({{ base_path }}/publication/2026-03-19-tinted-frames)
+### [Tinted Frames: Question Framing Blinds Vision-Language Models](https://davidhalladay.github.io/tinted_frames_demo/)
 
 **Can the way we ask a question change what a model sees?** We show that semantically equivalent questions can shift a vision-language model's attention away from relevant image regions. A lightweight prompt-tuning method helps restore visual grounding and consistency.
 
-[Project](https://davidhalladay.github.io/tinted_frames_demo/) · [Paper](https://arxiv.org/abs/2603.19203)
+[Project](https://davidhalladay.github.io/tinted_frames_demo/) · [arXiv](https://arxiv.org/abs/2603.19203) · [Details]({{ base_path }}/publication/2026-03-19-tinted-frames)
 </div>
 
 <div class="research-highlight" markdown="1">
 <p class="research-highlight__venue">NeurIPS 2025 · Long-sequence vision</p>
 
-### [REOrdering Patches Improves Vision Models]({{ base_path }}/publication/2025-05-29-reorder)
+### [REOrdering Patches Improves Vision Models](https://d3tk.github.io/REOrder/)
 
 **The order in which a model reads an image matters.** REOrder learns task-specific patch orderings for long-sequence vision models. It improves top-1 accuracy over row-major ordering by up to **3.01% on ImageNet-1K** and **13.35% on Functional Map of the World**.
 
-[Project](https://d3tk.github.io/REOrder/) · [Paper](https://neurips.cc/virtual/2025/loc/san-diego/poster/116773)
+[Project](https://d3tk.github.io/REOrder/) · [Paper](https://neurips.cc/virtual/2025/loc/san-diego/poster/116773) · [Details]({{ base_path }}/publication/2025-05-29-reorder)
 </div>
 
 [All publications]({{ base_path }}/publications/)
@@ -62,8 +60,8 @@ Satellite imagery reflects both the physical world and the conditions of observa
 
 ## Background
 
-Previously, I was a Research Engineer with [Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and a Visiting Student Researcher in [Aran Nayebi's NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University.
+Previously, I was a Research Assistant in [Aran Nayebi's NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University and a Research Engineer with [Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and 
 
-I completed my M.S. in Computer Science at the University of Pittsburgh, working with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) on machine learning for climate and environmental systems. My [thesis]({{ base_path }}/publication/2025-12-01-remote-sensing-thesis) examined self-supervised pretraining for remote sensing.
+I completed my B.S. and M.S. in Computer Science at the University of Pittsburgh, working with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) on machine learning for climate and environmental systems. My [thesis]({{ base_path }}/publication/2025-12-01-remote-sensing-thesis) examined self-supervised pretraining for remote sensing.
 
 Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music, and cats.

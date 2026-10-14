@@ -1,18 +1,16 @@
 ---
 title: "Tinted Frames: Question Framing Blinds Vision-Language Models"
 collection: publications
-paper_label: "Project"
 authors: "Wan-Cyuan Fan, Jiayun Luo, Declan Kutscher, Leonid Sigal, Ritwik Gupta"
 category: conferences
 permalink: /publication/2026-03-19-tinted-frames
 excerpt: 'We show that vision-language models are selectively blind: linguistic framing alters visual attention, degrading grounding and accuracy. We introduce a prompt-tuning method that realigns attention and restores performance.'
 date: 2026-03-19
 venue: 'EMNLP 2026'
-paperurl: 'https://davidhalladay.github.io/tinted_frames_demo/'
+projecturl: 'https://davidhalladay.github.io/tinted_frames_demo/'
+arxivurl: 'https://arxiv.org/abs/2603.19203'
 citation: 'Wan-Cyuan Fan, Jiayun Luo, Declan Kutscher, Leonid Sigal, Ritwik Gupta. (2026). &quot;Tinted Frames: Question Framing Blinds Vision-Language Models.&quot; <i>EMNLP 2026.</i>'
 ---
-
-[Project Website](https://davidhalladay.github.io/tinted_frames_demo/) | [arXiv](https://arxiv.org/abs/2603.19203)
 
 Vision-language models (VLMs) often underutilize visual inputs, relying instead on language priors. This work shows that such blindness is not static but conditional: models selectively attend to visual information depending on how a question is framed. Even when different formulations require identical visual reasoning, constrained formats such as yes/no or multiple-choice reduce attention to relevant image regions, increase focus on uninformative tokens, and degrade accuracy.
 
