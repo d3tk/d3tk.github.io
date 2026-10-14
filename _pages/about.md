@@ -16,6 +16,13 @@ redirect_from:
 I'm **Declan Kutscher**, a Ph.D. student in Computer Science at the **University of Maryland, College Park**, advised by [Ritwik Gupta](https://ritwikgupta.me/).
 
 I study how learning systems build useful representations of the world from **unlabeled data and interaction**. My work connects self-supervised learning, adaptive perception, and embodied agents, with applications in remote sensing and Earth observation.
+
+Previously, I was a Research Assistant in [Aran Nayebi's NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University and a Research Engineer with [Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and 
+
+I completed my B.S. and M.S. in Computer Science at the University of Pittsburgh, working with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) on machine learning for climate and environmental systems. My [thesis]({{ base_path }}/publication/2025-12-01-remote-sensing-thesis) examined self-supervised pretraining for remote sensing.
+
+Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music, and cats.
+
 </div>
 
 <div class="profile-actions">
@@ -57,11 +64,3 @@ In NeuroAI, I study how intrinsic motivation and self-supervised reinforcement l
 ### What changed: the world, or how we observed it?
 
 Satellite imagery reflects both the physical world and the conditions of observation: sensing geometry, atmosphere, illumination, and sensor characteristics. I am interested in representations that distinguish changes on the ground from changes in imaging conditions, supporting more reliable Earth monitoring.
-
-## Background
-
-Previously, I was a Research Assistant in [Aran Nayebi's NeuroAgents Lab](https://anayebi.github.io/group/) at Carnegie Mellon University and a Research Engineer with [Trevor Darrell's group](https://darrellgroup.github.io/) at UC Berkeley (BAIR) and 
-
-I completed my B.S. and M.S. in Computer Science at the University of Pittsburgh, working with [Xiaowei Jia](https://sites.pitt.edu/~xiaowei/) on machine learning for climate and environmental systems. My [thesis]({{ base_path }}/publication/2025-12-01-remote-sensing-thesis) examined self-supervised pretraining for remote sensing.
-
-Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music, and cats.
