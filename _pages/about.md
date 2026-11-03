@@ -34,7 +34,17 @@ Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music,
 ## Selected research
 
 <div class="research-highlight" markdown="1">
-<p class="research-highlight__venue">EMNLP 2026 · Vision-language models</p>
+<p class="research-highlight__venue">Preprint 2026</p>
+
+### [Intrinsic Goals for Autonomous Agents: Hierarchical Exploration Captures Future Volitional Action in Drosophila](https://neuroagents-lab.github.io/autonomous_drosophila/)
+
+**Can intrinsic motivation explain spontaneous animal behavior?** We compare 20 intrinsic learning objectives in a biomechanical fly. Hierarchical skill discovery best jointly captures individual differences in exploration and internal activity predictive of future turns, suggesting a shared computational basis for behavioral diversity and prospective neural signals.
+
+[Project](https://neuroagents-lab.github.io/autonomous_drosophila/) · [arXiv](https://arxiv.org/abs/2610.34638) · [Code](https://github.com/neuroagents-lab/autonomous_drosophila) · [Details]({{ base_path }}/publication/2026-10-25-intrinsic-goals)
+</div>
+
+<div class="research-highlight" markdown="1">
+<p class="research-highlight__venue">EMNLP 2026</p>
 
 ### [Tinted Frames: Question Framing Blinds Vision-Language Models](https://davidhalladay.github.io/tinted_frames_demo/)
 
@@ -44,7 +54,7 @@ Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music,
 </div>
 
 <div class="research-highlight" markdown="1">
-<p class="research-highlight__venue">NeurIPS 2025 · Long-sequence vision</p>
+<p class="research-highlight__venue">NeurIPS 2025</p>
 
 ### [REOrdering Patches Improves Vision Models](https://d3tk.github.io/REOrder/)
 
@@ -60,6 +70,8 @@ Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music,
 ### How can agents learn through exploration?
 
 In NeuroAI, I study how intrinsic motivation and self-supervised reinforcement learning drive skill discovery in embodied agents. I examine whether these agents develop neural representations and behaviors similar to those observed in animals, with the broader aim of understanding how useful world models emerge from experience.
+
+Our recent work on [intrinsic goals for autonomous agents]({{ base_path }}/publication/2026-10-25-intrinsic-goals) tests these ideas in a biomechanical fly, comparing learned exploratory strategies and internal representations with fly behavior and neural recordings.
 
 ### What changed: the world, or how we observed it?
 
