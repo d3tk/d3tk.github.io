@@ -64,15 +64,3 @@ Away from research, I enjoy [backpacking]({{ base_path }}/photos/), film, music,
 </div>
 
 [All publications]({{ base_path }}/publications/)
-
-## Questions that guide my work
-
-### How can agents learn through exploration?
-
-In NeuroAI, I study how intrinsic motivation and self-supervised reinforcement learning drive skill discovery in embodied agents. I examine whether these agents develop neural representations and behaviors similar to those observed in animals, with the broader aim of understanding how useful world models emerge from experience.
-
-Our recent work on [intrinsic goals for autonomous agents]({{ base_path }}/publication/2026-10-25-intrinsic-goals) tests these ideas in a biomechanical fly, comparing learned exploratory strategies and internal representations with fly behavior and neural recordings.
-
-### What changed: the world, or how we observed it?
-
-Satellite imagery reflects both the physical world and the conditions of observation: sensing geometry, atmosphere, illumination, and sensor characteristics. I am interested in representations that distinguish changes on the ground from changes in imaging conditions, supporting more reliable Earth monitoring.
